@@ -1,0 +1,34 @@
+**Project Documentatie – Inventory System**
+
+**Startdatum: 31-01-2025**  
+Op deze dag is het project officieel gestart. De eerste fase bestond uit het ontwerpen van de wireframes en het design. De eerste ontwerpen omvatten de loginpagina, registratiepagina, wachtwoord vergeten-pagina en de pagina voor het versturen van credentials.
+
+**01-02-2025 – Landingspagina**  
+De landingspagina is ontwikkeld met een overzichtelijke structuur. In de header is een loginlink opgenomen. Onderaan de pagina worden de kwaliteiten van de site belicht. De footer bevat links naar Contact, FAQ, een downloadsectie, de GitHub-repository en een supportpagina. Daarnaast is een abonnementsstructuur geïmplementeerd met drie plannen: een gratis versie, een abonnement voor kleine bedrijven en een abonnement voor grote bedrijven.
+
+**03-02-2025 – Hoofdpagina Inventory System**  
+De hoofdstructuur van het inventory systeem is opgezet. Het dashboard is ontworpen en gebruikersbeheer is toegevoegd met een dropdownmenu, waarin de opties ‘Add User’ en ‘View User’ beschikbaar zijn. Daarnaast is opslagbeheer toegevoegd met een dropdownmenu met ‘View Storage’ en ‘Add Storage’. Verder zijn prestatiebeheer en inkoopbeheer geïmplementeerd, beide met dropdownopties voor ‘View Order’ en ‘Add Order’. Tot slot is er een directe link geconfigureerd die gebruikers direct naar de database leidt.
+
+**04-02-2025 – Contact & FAQ Pagina’s**  
+Op deze dag zijn de contactpagina, de FAQ-pagina en de downloadpagina ontwikkeld. De downloadpagina is enkel toegankelijk voor gebruikers met een geldig abonnement.
+
+**05-02-2025 – Start van de ontwikkeling**  
+Vandaag is de daadwerkelijke programmeerfase van start gegaan. De benodigde mappenstructuur is opgezet en gevuld met de essentiële bestanden, waaronder een **CSS-map** voor stijlen, een **JavaScript-map** voor interactieve functionaliteiten en een **functions-map** voor PHP-functionaliteiten. 
+
+Daarnaast zijn de **index.php** en **login.php** bestanden aangemaakt, waarin de basisstyling is geïmplementeerd. Om een overzichtelijke en gestructureerde codebase te behouden, is de opbouw van webpagina’s gestroomlijnd door herbruikbare componenten zoals de **websettings, header en footer** onder te brengen in de **functions.php** file. Dit zorgt voor een efficiënter beheer en een schonere codebasis.
+
+Verder is een **GitHub-repository** opgezet om de voortgang te monitoren en versiebeheer toe te passen. Dit biedt niet alleen een veilige opslag voor de code, maar maakt het ook mogelijk om wijzigingen eenvoudig te tracken en te documenteren.
+
+**Overzicht van Ontwikkelde Pagina’s:**  
+✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
+✅ **Landingspagina** – Met loginlink, kwaliteiten van de site, en een uitgebreide footer  
+✅ **Abonnementsplannen** – Gratis, Small Business en Enterprise  
+✅ **Dashboard** – Hoofdstructuur van het inventory systeem  
+✅ **Gebruikersbeheer** – Add User & View User  
+✅ **Opslagbeheer** – View Storage & Add Storage  
+✅ **Prestatie- en inkoopbeheer** – View Order & Add Order  
+✅ **Database-link** – Directe toegang tot de database  
+✅ **Contactpagina** – Voor vragen en ondersteuning  
+✅ **FAQ-pagina** – Veelgestelde vragen en antwoorden  
+✅ **Downloadpagina** – Toegankelijk voor abonnees
+

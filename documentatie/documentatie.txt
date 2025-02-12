@@ -19,6 +19,9 @@ Daarnaast zijn de **index.php** en **login.php** bestanden aangemaakt, waarin de
 
 Verder is een **GitHub-repository** opgezet om de voortgang te monitoren en versiebeheer toe te passen. Dit biedt niet alleen een veilige opslag voor de code, maar maakt het ook mogelijk om wijzigingen eenvoudig te tracken en te documenteren.
 
+**12-02-2025 – Frontend van login.php afgerond**  
+Vandaag heb ik de frontend van de login.php pagina helemaal afgemaakt. Alle visuele elementen zoals de invoervelden, knoppen en links zijn gestyled en gepositioneerd. De pagina ziet er nu netjes en gebruiksvriendelijk uit.
+
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
 ✅ **Landingspagina** – Met loginlink, kwaliteiten van de site, en een uitgebreide footer  
@@ -32,3 +35,22 @@ Verder is een **GitHub-repository** opgezet om de voortgang te monitoren en vers
 ✅ **FAQ-pagina** – Veelgestelde vragen en antwoorden  
 ✅ **Downloadpagina** – Toegankelijk voor abonnees
 
+
+
+
+all the links
+
+youtube playlist
+[https://www.youtube.com/playlist?list=PLglf6-OPbGDfDFpnN67xqvTCR4WxQm4bd]
+
+reference project
+[https://opus.govst.edu/cgi/viewcontent.cgi?article=1156&context=capstones]
+
+login form
+[https://www.youtube.com/watch?v=Tv7FYCPxF7g]
+
+boxicons
+[https://boxicons.com/usage#import-css]
+
+font
+[https://fonts.google.com/specimen/Onest]

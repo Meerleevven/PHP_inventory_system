@@ -10,15 +10,39 @@ htmlHead('IMS', 'Login');
     <div class="loginBody">
         <h3>Login</h3>
         <form action="">
-            <div>
-                <input type="text" name="username" id="username" placeholder="Username">
+            <div class="inputField">
+                <input type="text" class="input" placeholder="Username" required>
+                <i class="bx bx-user"></i>
+                    <div class="forget">
+                        <label>
+                    <a href="#">Forget username</a>
+                        </label>
+                    </div>
                 </div>
-                <div>
-                <input type="password" name="password" id="password" placeholder="password">
-                </div>
-            <div>
-                <input type="submit" value="Login">
+            <div class="inputField">
+                <input type="password" class="input" placeholder="password" required>
+                <i class="bx bx-lock"></i>
+                    <div class="forget">
+                        <label>
+                    <a href="#">Forget password</a>
+                        </label>
+                    </div>
             </div>
+            <div class="remember">
+                <div class="left">
+                    <input type="checkbox" id="remember">	
+                    <label for="check">Remember Me</label>
+                </div>
+            </div>
+            <div class="inputField">
+                <input type="submit" class="submit" value="Login">
+            </div>
+
+            <div class="register">
+            <label>
+                <a href="#">Register new account</a>
+            </label>
+            </divr>
         </form>
 
     </div>

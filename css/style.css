@@ -1,3 +1,12 @@
+*{
+    font-family:'myFont';
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(../font/Onest.ttf);
+}
+
 body{
 background: url(../img/background.jpg) no-repeat center center fixed;
 background-size: cover;
@@ -10,4 +19,90 @@ text-align: center;
 .loginHeader h1{
     font-size: 50px;
     border-bottom: 5px solid #B5FFB5;
+    width: 70%; /* Pas deze waarde aan om de breedte van de streep te wijzigen */
+    margin: auto;
+}
+
+.loginHeader h1:after{
+    content: "";
+    display: block;
+    margin:0 auto;
+    width: 50%;
+    height: 5px;
+    background: 5px solid #B5FFB5;
+}
+
+.loginBody{
+    margin:0 auto;
+    width: 300px;
+    background: #b5ffb56e;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 35px;
+}
+
+.loginBody h3{
+    text-align: center;
+}
+
+.input{
+    height: 45px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: #000000;
+    padding: 0 0 0 45px;
+
+}
+
+.inputField{
+    display: flex;
+    flex-direction: column;
+}
+i{
+    position: relative;
+    top: -33px;
+    left: 17px;
+    color: #000000;
+}
+
+::-webkit-input-placeholder{
+    color: #000000;
+}
+
+.submit{
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    outline: none;
+    width: 100%;
+}
+
+.submit:hover{
+    box-shadow: 1px 5px 7px 1px rgb(0, 0, 0, 0.2);
+}
+
+.forget{
+    display: block;
+    margin-top: -10px; /* Pas deze waarde aan om de labels hoger te zetten */
+    padding-bottom: 20px;
+    margin-left: 10px;
+}
+
+.remember{
+    display: block;
+    margin-left: 155px;
+    margin-bottom: 5px;
+
+}
+label a{
+    color: #000;
+    text-decoration: none;
+}
+
+.register{
+    margin-top: 10px;
+    text-align: center;
 }

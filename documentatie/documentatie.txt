@@ -22,6 +22,9 @@ Verder is een **GitHub-repository** opgezet om de voortgang te monitoren en vers
 **12-02-2025 – Frontend van login.php afgerond**  
 Vandaag heb ik de frontend van de login.php pagina helemaal afgemaakt. Alle visuele elementen zoals de invoervelden, knoppen en links zijn gestyled en gepositioneerd. De pagina ziet er nu netjes en gebruiksvriendelijk uit.
 
+**18-02-2025 - frontend van index.php**
+Ik ben begonnen met het maken van de index-/landingspagina. De progressie is halverwege, en ik ben momenteel bezig met het oplossen van het eerste probleem: de <i>-tag in combinatie met CSS. In mijn CSS-bestand heb ik position: relative; ingesteld, wat ervoor zorgt dat de tag op de loginpagina op de juiste plek blijft. Op de indexpagina is deze eigenschap echter niet nodig. Daarom ben ik nu aan het kijken hoe ik dit kan oplossen.
+
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
 ✅ **Landingspagina** – Met loginlink, kwaliteiten van de site, en een uitgebreide footer  

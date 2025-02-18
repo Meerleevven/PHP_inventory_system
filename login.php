@@ -2,6 +2,7 @@
 include 'inc/function.php';
 htmlHead('IMS', 'Login');
 ?>
+<body id="loginBODY">
 <div class="container">
     <div class="loginHeader">
         <h1>Inventory Management Systems</h1>

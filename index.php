@@ -18,11 +18,33 @@ htmlHead('IMS', 'Homepagina ');
                 and stay in control effortlessly!
             </p>
             <div class="bannerIcons">
-                <a href=""><i class='bx bxl-windows'></i></a>
-                <a href=""><i class='bx bxl-apple'></i></a>
-                <a href=""><i class='bx bxl-android'></i></a>
+                <a href="#"><i class='bx bxl-windows'></i></a>
+                <a href="#"><i class='bx bxl-apple'></i></a>
+                <a href="#"><i class='bx bxl-android'></i></a>
             </div>
         </div>
+    </div>
+    <div class="homepageContainer" id="container">
+        <div class="homepageFeatures">
+            <div class="homepageFeature">
+                <span><i class='bx bxs-cog bx-rotate-90'></i></span>
+                <h3>Easy To Use</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
+            </div>
+            <div class="homepageFeature">
+                <span><i class='bx bxs-star'></i></span>
+                <h3>Flat Design</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
+            </div>
+            <div class="homepageFeature">
+                <span><i class='bx bx-world'></i></span>
+                <h3>Reach Your Audience</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        
     </div>
 <?php
 htmlFoot();

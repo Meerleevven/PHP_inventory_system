@@ -5,7 +5,7 @@ htmlHead('IMS', 'Homepagina ');
 <body>
     <div class="header"></div>
     <div class="banner">
-        <div class="homepageContainer">
+            <div class="homepageContainer">
             <div class="bannerHeader">
             <h1 id="txt1" class="txtGreen">The</h1>
             <h1 id="txt2">Inventory</h1>
@@ -17,11 +17,14 @@ htmlHead('IMS', 'Homepagina ');
                 <br>
                 and stay in control effortlessly!
             </p>
-            <div class="bannerIcons">
-                <a href="#"><i class='bx bxl-windows'></i></a>
-                <a href="#"><i class='bx bxl-apple'></i></a>
-                <a href="#"><i class='bx bxl-android'></i></a>
-            </div>
+            <div class="bannerContainer">
+        <div class="bannerIcons">
+            <a href="#"><i class='bx bxl-windows'></i></a>
+            <a href="#"><i class='bx bxl-apple'></i></a>
+            <a href="#"><i class='bx bxl-android'></i></a>
+        </div>
+            <div class="btnTogo"><a href="#">Get Started</a></div>
+        </div>
         </div>
     </div>
     <div class="homepageContainer" id="container">
@@ -44,7 +47,14 @@ htmlHead('IMS', 'Homepagina ');
         </div>
     </div>
     <div class="footer">
-        
+     <div class="homepageContainer" id="foot">
+        <div class="footerContent">
+            <h3>Stay In Contact</h3>
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+        </div>
+     </div>   
     </div>
 <?php
 htmlFoot();

@@ -95,7 +95,7 @@ text-align: center;
 
 .remember{
     display: block;
-    margin-left: 155px;
+    margin-left: 120px;
     margin-bottom: 5px;
 
 }
@@ -249,3 +249,37 @@ height: 100px;
     text-decoration: none;
 }
 
+.bannerFeature{
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+    
+}
+
+.bannerFeatures{
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 15px;
+    padding: 20px; 
+    width: 250px;
+    height: 330px;
+    margin-top: 20px;
+}
+
+.bannerFeatures a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.sumText{
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    height: 60vh;
+    margin: 0 auto;
+}
+
+.sumText p{
+    margin-top: 10px;
+}

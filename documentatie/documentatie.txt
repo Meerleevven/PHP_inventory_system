@@ -28,8 +28,11 @@ Ik ben begonnen met het maken van de index-/landingspagina. De progressie is hal
 **20-02-2025 - de helft index.php**  
 Vandaag heb ik het probleem met de <i>-tag opgelost door deze een eigen CSS-class te geven en de !important-regel toe te passen, zodat deze niet conflicteert met andere <i>-tags. Daarnaast heb ik de positionering van bepaalde elementen verbeterd door in plaats van margin-left de standaard margin te gebruiken met specifieke waarden. Hierdoor is de tweede helft van de indexpagina voltooid. Het enige wat nog rest is het toevoegen van de footer, zodat deze consistent kan worden toegepast op alle andere pagina's.
 
-**25-02-2025 - Index.php pagina af**
+**24-02-2025 - Index.php pagina af**
 Ik heb een paar dagen de Git niet geüpdatet omdat ik het na werk vergeten was, maar ik heb niet veel gedaan. Tot nu toe heb ik de indexpagina gemaakt zoals die op de wireframe stond. Er mist nog een knop, maar ik denk dat ik die er niet bij ga doen omdat het niet goed gaat met de CSS. Ook ben ik begonnen met de prijspagina. Voor nu heb ik alleen de CSS-styling van de achtergrond gedaan, maar daar ga ik later verder mee.
+
+**25-02-2025 - Pricepage.php af**
+Ik heb de hele prijspagina af, op een paar CSS-aanpassingen na. Helaas moet ik nu naar mijn werk, dus ik zal de laatste wijzigingen later doorvoeren.
 
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
@@ -63,3 +66,7 @@ boxicons
 
 font
 [https://fonts.google.com/specimen/Onest]
+
+css edits
+https://www.w3schools.com/css/css3_borders.asp
+http://w3schools.com/tags/tag_hr.asp

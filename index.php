@@ -5,6 +5,7 @@ htmlHead('IMS', 'Homepagina ');
 <body>
     <div class="header"></div>
     <div class="banner">
+    <div class="loginBtn"><a href="">log in</a></div>
             <div class="homepageContainer">
             <div class="bannerHeader">
             <h1 id="txt1" class="txtGreen">The</h1>

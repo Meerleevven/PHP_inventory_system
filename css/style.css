@@ -239,8 +239,11 @@ height: 100px;
     background: #000000;
     border-radius: 15px;
     padding: 20px; 
-    width: 130px;
-    height: 15px;
+    width: 129px;
+    height: 15px; /* Adjusted height to accommodate centering */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
   
 }
 
@@ -267,6 +270,11 @@ height: 100px;
     margin-top: 20px;
 }
 
+.bannerFeatures :hover{
+    width: 270px;
+    height: 350px;
+}
+
 .bannerFeatures a{
     color: #ffffff;
     text-decoration: none;
@@ -277,9 +285,30 @@ height: 100px;
     width: 100%;
     max-width: 900px;
     height: 60vh;
-    margin: 0 auto;
+    margin: 0 auto ;
+    padding: 50px;
 }
 
+
 .sumText p{
-    margin-top: 10px;
+    margin-top: 20px;
+}
+
+.loginBtn{
+    float: right;
+    margin-right: 100px;
+    margin-top: -75px;
+    background: #000000;
+    border-radius: 15px;
+    padding: 20px;
+    width: 80px;
+    height: 15px; /* Adjusted height to accommodate centering */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.loginBtn a{
+    text-decoration: none;
+    color: #ffffff;
 }

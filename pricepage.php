@@ -5,6 +5,7 @@ htmlHead('IMS', 'Prijs pagina');
 <body>
 <div class="header"></div>
 <div class="banner" id="priceBanner">
+    <div class="loginBtn"><a href="">log in</a></div>
         <div class="homepageContainer">
             <div class="bannerFeature">
                 <div class="bannerFeatures">

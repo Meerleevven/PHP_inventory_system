@@ -60,6 +60,12 @@ htmlHead('IMS', 'Prijs pagina');
             <a href="#"><i class='bx bxl-instagram'></i></a>
             <a href="#"><i class='bx bxl-twitter'></i></a>
         </div>
+        <div class="footGoto">
+            <a href="#">Contact</a>
+            <a href="#">Download</a>
+            <a href="#">Support</a>
+            <a href="#">Faq</a>
+            <a href="#">Github</a>
      </div>   
     </div>
 <?php

@@ -170,7 +170,7 @@ label a{
 
 #container{
     max-width: 1500px;
-    background-color: E4E4E4;
+    background-color: #E4E4E4;
 }
 
 .homepageFeatures{
@@ -207,6 +207,7 @@ height: 100px;
 }
 .footerContent h3{
     margin-top: 20px;
+    margin-right: 45px;
 }
 
 .footerContent a{
@@ -219,6 +220,20 @@ height: 100px;
     height: 50px;
     display: inline-block;
     margin-top: 10px;
+}
+
+.footGoto{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 117px;
+    margin-top: 10px;
+}
+
+.footGoto a{
+    color: #000000;
+    text-decoration: none;
+    margin-left: 30px;
 }
 
 #pricebanner {
@@ -309,6 +324,63 @@ height: 100px;
 }
 
 .loginBtn a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Dashboard */
+
+body#dashboard{
+    background: #E4E4E4;
+}
+
+#dbMainContainer{
+    display: flex;
+    flex-direction: row;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.dbSidebar{
+    width: 20%;
+    background: #323232;
+    height: 100vh;
+}
+
+.dbcontent-Container{
+    width: 70%;
+}
+
+.sidebarUser{
+    margin-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #b5ffb5;
+}
+
+.sidebarUser img{
+    width: 60px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid #b5ffb5;
+    margin-left: 20px;
+}
+
+.sidebarUser span{
+    position: absolute;
+    top: 60px;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.dbsidebar-menuList li{
+    padding: 20px 0px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.dbsidebar-menuList li a{
     text-decoration: none;
     color: #ffffff;
 }

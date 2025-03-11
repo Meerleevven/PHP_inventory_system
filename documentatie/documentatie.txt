@@ -37,6 +37,9 @@ Ik heb de hele prijspagina af, op een paar CSS-aanpassingen na. Helaas moet ik n
 **06-03-2025 - Kleine edits**
 Ik ben al een tijdje weg geweest in verband met het feit dat ik veel heb moeten werken tijdens carnavalvakantue, dus ik had geen tijd. Vandaag heb ik twee edits gemaakt: één voor de indexpagina en twee voor de prijspagina, waar je nu de login-knop kunt zien bij beide paginas. Voor de indexpagina heb ik de "Get Started"-knop toegevoegd die je naar de prijspagina stuurt, want dat was me de laatste keer niet gelukt. Nu is alles bijna gelinkt.
 
+**10/11-03-2025 - dashboard.php**
+ik ben de 10de begonnen aan de dashboard pagina, en heb op de 11de bijna heel de layout gemaakt zodat ik die kan kopieren en dan als cheat sheet kan gebruiken ik denk dat ik daar ook een map bij ga maken zodat ik als ik die nodig heb gelijk kan pakken.
+
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
 ✅ **Landingspagina** – Met loginlink, kwaliteiten van de site, en een uitgebreide footer  
@@ -66,6 +69,8 @@ login form
 
 boxicons
 [https://boxicons.com/usage#import-css]
+https://fontawesome.com/icons/
+
 
 font
 [https://fonts.google.com/specimen/Onest]

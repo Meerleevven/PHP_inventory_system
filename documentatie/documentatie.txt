@@ -35,10 +35,13 @@ Ik heb een paar dagen de Git niet geüpdatet omdat ik het na werk vergeten was, 
 Ik heb de hele prijspagina af, op een paar CSS-aanpassingen na. Helaas moet ik nu naar mijn werk, dus ik zal de laatste wijzigingen later doorvoeren.
 
 **06-03-2025 - Kleine edits**
-Ik ben al een tijdje weg geweest in verband met het feit dat ik veel heb moeten werken tijdens carnavalvakantue, dus ik had geen tijd. Vandaag heb ik twee edits gemaakt: één voor de indexpagina en twee voor de prijspagina, waar je nu de login-knop kunt zien bij beide paginas. Voor de indexpagina heb ik de "Get Started"-knop toegevoegd die je naar de prijspagina stuurt, want dat was me de laatste keer niet gelukt. Nu is alles bijna gelinkt.
+Ik ben al een tijdje weg geweest in verband met het feit dat ik veel heb moeten werken tijdens carnavalvakantie, dus ik had geen tijd. Vandaag heb ik twee edits gemaakt: één voor de indexpagina en twee voor de prijspagina, waar je nu de login-knop kunt zien bij beide paginas. Voor de indexpagina heb ik de "Get Started"-knop toegevoegd die je naar de prijspagina stuurt, want dat was me de laatste keer niet gelukt. Nu is alles bijna gelinkt.
 
 **10/11-03-2025 - dashboard.php**
 ik ben de 10de begonnen aan de dashboard pagina, en heb op de 11de bijna heel de layout gemaakt zodat ik die kan kopieren en dan als cheat sheet kan gebruiken ik denk dat ik daar ook een map bij ga maken zodat ik als ik die nodig heb gelijk kan pakken.
+
+**12-03-2025 - dashboard.php js**
+Ik heb alle CSS- en HTML-elementen van de dashboard.php afgerond. Nu moet ik de JavaScript-functies afmaken. Ik ben ongeveer halverwege; ik heb nu de in- en uitklapfuncties gemaakt door middel van een boolean en door enkele CSS-functies in JavaScript te zetten. Ik moet nu alleen nog zorgen dat alles er weer netjes uitziet, na de toggle functie.
 
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  

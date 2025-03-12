@@ -330,9 +330,6 @@ height: 100px;
 
 /* Dashboard */
 
-body#dashboard{
-    background: #E4E4E4;
-}
 
 #dbMainContainer{
     display: flex;
@@ -347,10 +344,6 @@ body#dashboard{
     height: 100vh;
 }
 
-.dbcontent-Container{
-    width: 70%;
-}
-
 .sidebarUser{
     margin-top: 10px;
     padding-bottom: 20px;
@@ -359,6 +352,7 @@ body#dashboard{
 
 .sidebarUser img{
     width: 60px;
+    height: 60px;
     display: inline-block;
     border-radius: 50%;
     border: 1px solid #b5ffb5;
@@ -374,13 +368,57 @@ body#dashboard{
     margin-left: 10px;
 }
 
+.dbsidebar-menuList{
+    padding: 0;
+}
+
 .dbsidebar-menuList li{
-    padding: 20px 0px;
+    padding: 20px 23px;
     font-size: 18px;
     text-transform: uppercase;
+    list-style: none;
 }
 
 .dbsidebar-menuList li a{
     text-decoration: none;
     color: #ffffff;
+}
+
+.dbsidebar-menuList li.menuActive{
+    background: #b5ffb5;
+}
+
+.dbsidebar-menuList li:hover{
+    background: #b5ffb5;
+}
+
+.dbcontent-Container{
+    width: 80%;
+}
+
+.dbtopNav{
+    padding: 30px;
+    background: #e4e4e4;
+}
+
+.dbtopNav a{
+    text-decoration: none;
+    color: #848383;
+    font-size: 18px;
+}
+
+#logoutBtn{
+    float: right;
+}
+
+
+.dbcontent{
+    background: #ffff;
+    padding: 20px 10px 10px 10px;
+}
+
+.dbcontent-Min{
+    background:  #E4E4E4;
+    min-height: 90%;
+    height: 100%;
 }

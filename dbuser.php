@@ -1,6 +1,6 @@
 <?php
 include 'inc/function.php';
-htmlHead('IMS', 'Dashboard');
+htmlHead('IMS', 'User');
 ?>
 <body>
     <div id="dbMainContainer">
@@ -12,8 +12,8 @@ htmlHead('IMS', 'Dashboard');
             </div>
             <div class="dbsidebar-Menus">
                 <div class="dbsidebar-menuList" id="dbsidebar_menuList">
-                    <li class="menuActive"><a href="#"><i class="fa-solid fa-house menuIcons"></i><span class="menuText"> Dashboard</span></a></li>
-                    <li><a href="#"><i class="fa-solid fa-user menuIcons"></i><span class="menuText"> User</span></a></li>
+                    <li><a href="#"><i class="fa-solid fa-house menuIcons"></i><span class="menuText"> Dashboard</span></a></li>
+                    <li class="menuActive"><a href="#"><i class="fa-solid fa-user menuIcons"></i><span class="menuText"> User</span></a></li>
                     <li><a href="#"><i class="fa-solid fa-warehouse menuIcons"></i><span class="menuText"> Storage</span></a></li>
                     <li><a href="#"><i class="fa-solid fa-chart-simple menuIcons"></i><span class="menuText"> Perfomance</span></a></li>
                     <li><a href="#"><i class="fa-solid fa-cart-shopping menuIcons"></i><span class="menuText"> Purchase</span></a></li>

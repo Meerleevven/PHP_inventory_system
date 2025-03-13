@@ -349,6 +349,10 @@ height: 100px;
     padding-bottom: 20px;
     border-bottom: 1px solid #b5ffb5;
 }
+.dbsidebar-Logo{
+    margin-left: 8px;
+    font-size: 16px;
+}
 
 .sidebarUser img{
     width: 60px;
@@ -361,15 +365,11 @@ height: 100px;
 
 .sidebarUser span{
     position: absolute;
-    top: 60px;
+    top: 54px;
     font-size: 14px;
     text-transform: uppercase;
     display: inline-block;
     margin-left: 10px;
-}
-
-.dbsidebar-menuList{
-    padding: 0;
 }
 
 .dbsidebar-menuList li{

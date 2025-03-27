@@ -44,7 +44,10 @@ ik ben de 10de begonnen aan de dashboard pagina, en heb op de 11de bijna heel de
 Ik heb alle CSS- en HTML-elementen van de dashboard.php afgerond. Nu moet ik de JavaScript-functies afmaken. Ik ben ongeveer halverwege; ik heb nu de in- en uitklapfuncties gemaakt door middel van een boolean en door enkele CSS-functies in JavaScript te zetten. Ik moet nu alleen nog zorgen dat alles er weer netjes uitziet, na de toggle functie.
 
 **13-03-2025 - kleine save**
-ik heb nieuwe pagina erin gezet waar ik in ga werken en en de JavaScript van dashboard is nu komplee
+ik heb nieuwe pagina erin gezet waar ik in ga werken en en de JavaScript van dashboard is nu kompleet
+
+**27-03-2025 - JavaScript elementen**
+ik heb afgelopen dagen nieuwe paginas toegevoegd en JavaScript code voor een wachtwoord strengtvalidator ik ben nu alleen nog beter met een zelfde wachtwoord validator
 
 
 **Overzicht van Ontwikkelde Pagina’s:**  
@@ -74,6 +77,10 @@ reference project
 login form
 [https://www.youtube.com/watch?v=Tv7FYCPxF7g]
 
+password strength bar
+https://www.youtube.com/watch?v=xHdJTAtLOOs
+https://www.youtube.com/watch?v=tQgw9HJc-Yw
+
 boxicons
 [https://boxicons.com/usage#import-css]
 https://fontawesome.com/icons/
@@ -85,3 +92,4 @@ font
 css edits
 https://www.w3schools.com/css/css3_borders.asp
 http://w3schools.com/tags/tag_hr.asp
+https://www.w3schools.com/tags/tag_select.asp

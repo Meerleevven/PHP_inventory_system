@@ -24,8 +24,9 @@ htmlHead('IMS', 'Login');
             </div>
 
             <div class="inputField">
-                <input type="password" class="input" placeholder="confirm password" required>
+                <input type="password" class="inputPas2" placeholder="confirm password" required>
                 <i class="bx bx-lock"></i>
+                <div class="matchedPass"></div>
             </div>
 
             <div class="inputField">

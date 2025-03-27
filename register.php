@@ -17,8 +17,9 @@ htmlHead('IMS', 'Register');
             </div>
 
             <div class="inputField">
-                <input type="text" class="input" placeholder="E-mail" required>
+                <input type="text" class="inputEmail" placeholder="E-mail" required>
                 <i class="bx bx-envelope"></i>
+                <div class="regexCheck"></div>
             </div>
 
             <div class="inputField">
@@ -34,7 +35,7 @@ htmlHead('IMS', 'Register');
             </div>
 
             <div class="inputField">
-                <input type="password" class="input" placeholder="confim password" required>
+                <input type="password" class="inputPas2" placeholder="confim password" required>
                 <i class="bx bx-lock"></i>
                 <div class="matchedPass"></div>
             </div>

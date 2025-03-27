@@ -46,8 +46,11 @@ Ik heb alle CSS- en HTML-elementen van de dashboard.php afgerond. Nu moet ik de 
 **13-03-2025 - kleine save**
 ik heb nieuwe pagina erin gezet waar ik in ga werken en en de JavaScript van dashboard is nu kompleet
 
-**27-03-2025 - JavaScript elementen**
+**26-03-2025 - JavaScript elementen**
 ik heb afgelopen dagen nieuwe paginas toegevoegd en JavaScript code voor een wachtwoord strengtvalidator ik ben nu alleen nog beter met een zelfde wachtwoord validator
+
+**27-03-2025 - update **
+ik heb de wachtwoord validator gefixt ik moest ze gewoon de classes andere namen geven. ik ga nu een een email regex toevoegen. regex compleet. ik heb nu ook de showbtn gefixt die gaat mee als de regex validator showt
 
 
 **Overzicht van Ontwikkelde Pagina’s:**  

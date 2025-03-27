@@ -1,3 +1,4 @@
+//voor de dashboard
 document.addEventListener('DOMContentLoaded', () => {
     const dbSidebar = document.querySelector('.dbSidebar');
     const dbcontent_Container = document.getElementById('dbcontent_Container');
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+//wachtwoordsterkte bar
 document.addEventListener('DOMContentLoaded', () => {
 const indicator = document.querySelector('.indicator');
 const input = document.querySelector('.inputPas');
@@ -125,17 +127,38 @@ function trigger() {
 input.addEventListener('input', trigger);
 });
 
-
+//wachtwoord matcher + email regex
 document.addEventListener('DOMContentLoaded', () => {
     const pas1 = document.querySelector('.inputPas');
-    const confirmPassword = document.querySelector('.input'); // Tweede wachtwoordveld
+    const confirmPassword = document.querySelector('.inputPas2'); // Tweede wachtwoordveld
     const errorText = document.querySelector('.matchedPass'); // Melding ophalen
+    const email = document.querySelector('.inputEmail');
+    const errorEmail = document.querySelector('.regexCheck');
+    const showBtn = document.getElementById('showBTN');
+
+    regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
     function validatepasswords() {
-        if (confirmPassword.value = ""){
-            console.log('Vul een wachtwoord in');
+        if (confirmPassword.value !== pas1.value) {
+            errorText.style.display = 'block';
+            errorText.textContent = 'Passwords do not match';
+        }
+        else {
+            errorText.style.display = 'none';
         }
     }
 
-    input.addEventListener('input', validatepasswords);
+    function validateEmail() {
+        if (email.value.match(regexEmail)) {
+            errorEmail.style.display = 'none';
+            showBtn.style.bottom = '-69px';
+        } else {
+            errorEmail.style.display = 'block';
+            errorEmail.textContent = 'Invalid Email';
+            showBtn.style.bottom = '-104px';
+        }
+    }
+
+    confirmPassword.addEventListener('input', validatepasswords);
+    email.addEventListener('input', validateEmail);
 });

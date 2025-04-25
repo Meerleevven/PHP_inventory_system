@@ -83,6 +83,9 @@ reference project
 login form
 [https://www.youtube.com/watch?v=Tv7FYCPxF7g]
 
+cookies
+https://www.youtube.com/watch?v=n5dLk8ISKMo
+
 password strength bar
 https://www.youtube.com/watch?v=xHdJTAtLOOs
 https://www.youtube.com/watch?v=tQgw9HJc-Yw

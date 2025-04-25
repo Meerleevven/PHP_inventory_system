@@ -1,6 +1,16 @@
 <?php
 include 'inc/function.php';
 htmlHead('IMS', 'Dashboard');
+
+session_start();
+$useraccname = showTheLogin();
+
+if (!isset($_SESSION['companyName'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$user = $_SESSION['companyName'];
 ?>
 <body>
     <div id="dbMainContainer">
@@ -8,7 +18,7 @@ htmlHead('IMS', 'Dashboard');
             <h3 class="dbsidebar-Logo" id="dbsidebar_Logo">Inventory Management System</h3>
             <div class="sidebarUser">
                 <img src="" alt="user image" id="dbsidebar_userImage">
-                <span id="username">username met php</span>
+                <span id="username"><?= htmlspecialchars($useraccname) ?></span>
             </div>
             <div class="dbsidebar-Menus">
                 <div class="dbsidebar-menuList" id="dbsidebar_menuList">

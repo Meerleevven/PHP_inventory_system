@@ -6,10 +6,12 @@ session_start();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     logincompany();
 }
-if (isset($_SESSION['userIsLoggedIn']) && $_SESSION['userIsLoggedIn'] == true) {
+
+if (isset($_SESSION['companyName'])) {
     header("Location: dashboard.php");
     exit();
 }
+
 $disp_email = !empty($_COOKIE['companyName']) ? $_COOKIE['companyName'] : '';
 $checked = isset($_COOKIE['cookies_remember']) ? "checked" : '';  
 ?>

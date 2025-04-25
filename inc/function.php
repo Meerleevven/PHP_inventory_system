@@ -53,7 +53,7 @@ function logincompany(){
             if (password_verify($_POST['password'], $row['companyPassword']) || 
             $_POST['password'] === $row['companyPassword']) {
                 session_start();
-                $_SESSION['companyId'] = $row['companyId'];
+                $_SESSION['companyName'] = $row['companyName'];
                 if (isset($_POST['remember'])) {
                     setcookie('companyName', $row['companyName'], time() + (60*60*24*30), "/");
                     setcookie('cookies_remember', 'true', time() + (60*60*24*30), "/");  // Consistentie: altijd 'true'
@@ -89,10 +89,21 @@ function logincompany(){
                 });
                 </script>";;
     }
+    
 }
 }
 
 
+
+function showTheLogin() {
+
+    logincompany();
+
+    if (isset($_SESSION['companyName'])) {
+        return $_SESSION['companyName'];
+    }
+    
+}
 
 function htmlFoot(){
 

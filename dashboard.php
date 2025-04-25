@@ -24,7 +24,7 @@ htmlHead('IMS', 'Dashboard');
         <div class="dbcontent-Container" id="dbcontent_Container">
             <div class="dbtopNav">
                 <a href="#" id="toggleBtn"><i class="fa fa-navicon"></i></a>
-                <a href="#" id="logoutBtn"><i class="fa fa-power-off"></i>Log-out</a>
+                <a href="logout.php" id="logoutBtn"><i class="fa fa-power-off"></i>Log-out</a>
             </div>
             <div class="dbContent">
                 <div class="dbcontent-Min">

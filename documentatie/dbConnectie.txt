@@ -1,0 +1,10 @@
+Company > companyId > companyOwner > paymentPlan(foreignKey) > companyPass > CompanyWorker(foreignKey) > companyPhoto(foreignKey?)
+
+nav > navId > navPage > navLink > nav?
+
+Worker > workerId > WorkerName > workerEmail > workerPass > WorkerPhoto
+
+product > productId > ProductStock > ProductTitle > productImage > (categoryId?)
+
+paymentPlan > paymentplanId > paymentplanChoice 
+

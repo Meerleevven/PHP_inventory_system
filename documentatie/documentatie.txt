@@ -52,6 +52,9 @@ ik heb afgelopen dagen nieuwe paginas toegevoegd en JavaScript code voor een wac
 **27-03-2025 - update **
 ik heb de wachtwoord validator gefixt ik moest ze gewoon de classes andere namen geven. ik ga nu een een email regex toevoegen. regex compleet. ik heb nu ook de showbtn gefixt die gaat mee als de regex validator showt
 
+***23-04-2025 - login.php backend compleet***
+afgelopen tijd heb ik heel veel gewerk waardoor ik amper tot geen tijd had om verder te werken de 23ste ben ik begonnen met het zorgen dat ik kan inloggen via de gegevens van de datase dat is me die dag ook gelijk gelukt 24ste ben ik ziek geworden dus heb ik niks kunnen doen vandaag heb cookies toegevoegd doormidden van de remember me checkbox (ps zorg de een hash op je wachtwoorden gooit en security toevoegd aan je accounts)
+
 
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  

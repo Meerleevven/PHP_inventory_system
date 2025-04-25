@@ -1,18 +1,33 @@
 <?php
 include 'inc/function.php';
 htmlHead('IMS', 'Login');
+
+session_start();
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    logincompany();
+}
+if (isset($_SESSION['userIsLoggedIn']) && $_SESSION['userIsLoggedIn'] == true) {
+    header("Location: dashboard.php");
+    exit();
+}
+$disp_email = !empty($_COOKIE['companyName']) ? $_COOKIE['companyName'] : '';
+$checked = isset($_COOKIE['cookies_remember']) ? "checked" : '';  
 ?>
 <body id="loginBODY">
 <div class="container">
+<div class="foutMessage" id="foutMessage" style="display: none;">
+    <p id="errorWachtwoord"> fout Wachtwoord</p>
+    <p id="errorUser"> fout Gebruikersnaam/E-mail</p>
+</div>
     <div class="loginHeader">
         <h1>Inventory Management Systems</h1>
 
     </div>
     <div class="loginBody">
         <h3>Login</h3>
-        <form action="">
+        <form action="login.php" method="POST">
             <div class="inputField">
-                <input type="text" class="input" placeholder="Username" required>
+                <input type="text" class="input" name="username" placeholder="Username" required value="<?php echo htmlspecialchars($disp_email, ENT_QUOTES, 'UTF-8'); ?>">
                 <i class="bx bx-user"></i>
                     <div class="forget">
                         <label>
@@ -21,7 +36,7 @@ htmlHead('IMS', 'Login');
                     </div>
                 </div>
             <div class="inputField">
-                <input type="password" class="input" placeholder="password" required>
+                <input type="password" class="input" name="password" placeholder="password" required>
                 <i class="bx bx-lock"></i>
                     <div class="forget">
                         <label>
@@ -31,7 +46,7 @@ htmlHead('IMS', 'Login');
             </div>
             <div class="remember">
                 <div class="left">
-                    <input type="checkbox" id="remember">	
+                    <input type="checkbox" name="remember" id="remember" <?php echo $checked; ?>>	
                     <label for="check">Remember Me</label>
                 </div>
             </div>

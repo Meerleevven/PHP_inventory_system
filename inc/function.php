@@ -105,6 +105,67 @@ function showTheLogin() {
     
 }
 
+function registerCompany(){
+    $conn = connectDB();
+    
+
+    if(isset($_POST['regUsername']) && isset($_POST['regEmail']) && isset($_POST['regPassword']) && isset($_POST['regconfirmPas']) && isset($_POST['payment_plan'])){
+        $username = $_POST['regUsername'];
+        $email = $_POST['regEmail'];
+        $password = $_POST['regPassword'];
+        $confirmPassword = $_POST['regconfirmPas'];
+        $paymentPlan = $_POST['payment_plan'];
+    
+        if ($confirmPassword === $password && $paymentPlan !== 'option') {
+             
+            // Check if username or email already exists
+            $stmt = $conn->prepare("SELECT * FROM company WHERE companyName=? OR companyEmail=?");
+            $stmt->bind_param("ss", $username, $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+    
+            if ($result->num_rows === 0) {
+                // Hash the password
+                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    
+                // Insert new user into the database
+                //$stmt = $conn->prepare("INSERT INTO company (companyName, companyEmail, companyPassword, paymentPlanId) VALUES (?, ?, ?, ?)");
+                //$stmt->bind_param("ssss", $username, $email, $hashedPassword, $paymentPlan);
+    
+                if ($stmt->execute()) {
+                    echo "<script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            document.getElementById('successMsg').style.display = 'block';
+
+                            setTimeout(() => {
+                            document.getElementById('successMsg').style.display = 'none';
+                            }, 3000);
+                        });
+                    </script>";
+                } else {
+                    echo "<script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            document.getElementById('failureMsg').style.display = 'block';
+                            setTimeout(() => {
+                            document.getElementById('failureMsg').style.display = 'none';
+                            }, 3000);
+                        });
+                    </script>";
+                }
+            } else {
+                
+            }
+        } else {
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                     document.getElementById('matchedPass').style.display = 'block';
+                     document.getElementById('matchedPass').innerHTML = 'Password does not match!';
+                });
+            </script>";
+        }
+    }
+}
+
 function htmlFoot(){
 
     ?>

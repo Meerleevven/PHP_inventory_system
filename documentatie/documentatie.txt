@@ -53,8 +53,10 @@ ik heb afgelopen dagen nieuwe paginas toegevoegd en JavaScript code voor een wac
 ik heb de wachtwoord validator gefixt ik moest ze gewoon de classes andere namen geven. ik ga nu een een email regex toevoegen. regex compleet. ik heb nu ook de showbtn gefixt die gaat mee als de regex validator showt
 
 ***23-04-2025 - login.php backend compleet***
-afgelopen tijd heb ik heel veel gewerk waardoor ik amper tot geen tijd had om verder te werken de 23ste ben ik begonnen met het zorgen dat ik kan inloggen via de gegevens van de datase dat is me die dag ook gelijk gelukt 24ste ben ik ziek geworden dus heb ik niks kunnen doen vandaag heb cookies toegevoegd doormidden van de remember me checkbox (ps zorg de een hash op je wachtwoorden gooit en security toevoegd aan je accounts)
+De afgelopen tijd heb ik veel gewerkt, waardoor ik nauwelijks tot geen tijd had om verder te werken. Op 23 april ben ik begonnen met het implementeren van de functionaliteit om in te loggen via de gegevens uit de database. Dit is diezelfde dag succesvol afgerond. Op 24 april ben ik ziek geworden, waardoor ik geen voortgang heb kunnen boeken. Vandaag heb ik cookies toegevoegd door middel van de "Remember Me"-checkbox. Let op: zorg ervoor dat wachtwoorden gehasht worden en dat er voldoende beveiligingsmaatregelen worden toegevoegd aan gebruikersaccounts.
 
+***30-04-2025 - de registratie backend***
+Het eerste deel van de backend is afgerond. Het opslaan van gegevens in de database werkt, maar de `payment_planId` lijkt nog niet volledig correct te functioneren. Daarnaast moeten de foutmeldingen nog worden uitgewerkt, zodat deze op een correcte manier worden weergegeven. Ik overweeg ook om cookies? toe te voegen, zodat bij een fout alleen de incorrecte gegevens opnieuw hoeven te worden ingevoerd, terwijl de correcte gegevens behouden blijven. Dit moet ik echter nog verder onderzoeken.
 
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
@@ -70,7 +72,17 @@ afgelopen tijd heb ik heel veel gewerk waardoor ik amper tot geen tijd had om ve
 ✅ **Downloadpagina** – Toegankelijk voor abonnees
 
 
+1. Creatie (Ontwikkeling)
+Het bouwen of programmeren van de basisstructuur. Denk aan het opzetten van de code, de database en de eerste opzet van de applicatie of website.
 
+2. Functionaliteit
+Zorgen dat het systeem doet wat het moet doen. De functies worden toegevoegd en getest: inloggen, registreren, uploaden, zoeken, enzovoort.
+
+3. Performantie (Prestatie)
+Controleren of alles snel, soepel en efficiënt werkt. Denk aan laadtijden, optimalisatie van code, caching, servergebruik, enz.
+
+4. Security (Veiligheid & Zekerheid)
+Beveiligen van het systeem. Bijvoorbeeld: wachtwoord hashing, input validatie, bescherming tegen SQL-injecties, HTTPS, gebruikersrechten.
 
 all the links
 
@@ -102,3 +114,6 @@ css edits
 https://www.w3schools.com/css/css3_borders.asp
 http://w3schools.com/tags/tag_hr.asp
 https://www.w3schools.com/tags/tag_select.asp
+
+register/login success fail edit
+https://www.youtube.com/watch?v=hm79I2JpwJw

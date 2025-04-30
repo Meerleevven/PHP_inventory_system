@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function validatepasswords() {
         if (confirmPassword.value !== pas1.value) {
             errorText.style.display = 'block';
-            errorText.textContent = 'Passwords do not match';
+            errorText.textContent = 'Passwords does not match';
         }
         else {
             errorText.style.display = 'none';
@@ -162,3 +162,4 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmPassword.addEventListener('input', validatepasswords);
     email.addEventListener('input', validateEmail);
 });
+

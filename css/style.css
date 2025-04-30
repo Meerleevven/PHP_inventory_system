@@ -180,6 +180,12 @@ label a{
     display: none;
 }
 
+#matchedPass{
+    text-align: center;
+    color: #ff4757;
+    margin-bottom: 10px;
+}
+
 .indicator{
     height: 10px;
     display: flex;
@@ -467,7 +473,35 @@ height: 100px;
     gap: 10px;
 }
 
+.successMsg {
+    background: #b5ffb5;  /* Lichtgroen */
+    color: #388E3C;      /* Donkergroen */
+    text-align: center;
+    border-radius: 7px;
+    padding: 10px 20px; /* Adjusted padding for better spacing */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    margin: 0 auto; /* Center the element itself */
+    width: fit-content; /* Adjust width to fit the text */
+    height: auto; /* Adjust height to fit the content */
+    margin-top: 10px;
+}
 
+.failureMsg {
+    background: #f5b7c1;  /* Lichtrood */
+    color: #D32F2F;      /* Donkerrood */
+    text-align: center;
+    border-radius: 7px;
+    padding: 10px 20px; /* Adjusted padding for better spacing */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+    margin: 0 auto; /* Center the element itself */
+    width: fit-content; /* Adjust width to fit the text */
+    height: auto; /* Adjust height to fit the content */
+    margin-top: 10px;
+}
 
 .loginBtn a{
     text-decoration: none;

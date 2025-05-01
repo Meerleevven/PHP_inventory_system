@@ -58,6 +58,9 @@ De afgelopen tijd heb ik veel gewerkt, waardoor ik nauwelijks tot geen tijd had 
 ***30-04-2025 - de registratie backend***
 Het eerste deel van de backend is afgerond. Het opslaan van gegevens in de database werkt, maar de `payment_planId` lijkt nog niet volledig correct te functioneren. Daarnaast moeten de foutmeldingen nog worden uitgewerkt, zodat deze op een correcte manier worden weergegeven. Ik overweeg ook om cookies? toe te voegen, zodat bij een fout alleen de incorrecte gegevens opnieuw hoeven te worden ingevoerd, terwijl de correcte gegevens behouden blijven. Dit moet ik echter nog verder onderzoeken.
 
+***01-05-2025 - de registratie backend deel 2***
+De code is herzien en aangepast om ervoor te zorgen dat het payment plan correct functioneert. Daarnaast moet er nog worden gezorgd voor aanvullende validaties, zoals het controleren of alle velden zijn ingevuld. Ook dient de regex-validatie naar de backend te worden verplaatst om te controleren of het wachtwoord voldoet aan de vereisten voor sterkte. Verder zijn er al ideeën uitgewerkt om gebruikersvriendelijkheid te verbeteren, bijvoorbeeld door correcte invoer te behouden wanneer slechts één veld onjuist is ingevuld.
+
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
 ✅ **Landingspagina** – Met loginlink, kwaliteiten van de site, en een uitgebreide footer  

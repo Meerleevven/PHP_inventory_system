@@ -115,6 +115,13 @@ text-align: center;
     margin-bottom: 10px;
 }
 
+#emailExist{
+    color: #ff4757;
+    text-align: center;
+    margin-bottom: 10px;
+    display: none;
+}
+
 .submit{
     height: 45px;
     border: none;
@@ -153,7 +160,7 @@ label a{
 
 .payment-plan{
     margin-bottom: 10px;
-    margin-left: 16px;
+    margin-left: 60px;
 }
 
 #inputField{
@@ -184,6 +191,13 @@ label a{
     text-align: center;
     color: #ff4757;
     margin-bottom: 10px;
+}
+
+#noPlan{
+    text-align: center;
+    color: #ff4757;
+    margin-bottom: 10px;
+    display: none;
 }
 
 .indicator{
@@ -486,6 +500,7 @@ height: 100px;
     width: fit-content; /* Adjust width to fit the text */
     height: auto; /* Adjust height to fit the content */
     margin-top: 10px;
+    display: none;
 }
 
 .failureMsg {
@@ -501,6 +516,7 @@ height: 100px;
     width: fit-content; /* Adjust width to fit the text */
     height: auto; /* Adjust height to fit the content */
     margin-top: 10px;
+    display: none;
 }
 
 .loginBtn a{

@@ -8,11 +8,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <body id="loginBODY">
 <div class="container">
-    <div class="successMsg" id="successMsg" style="display: none;">
+    <div class="successMsg" id="successMsg">
         <i class='bx bx-check'></i>
         <span class="theMsg">Registration successful!</span>
     </div>
-    <div class="failureMsg" id="failureMsg" style="display: none;">
+    <div class="failureMsg" id="failureMsg">
         <i class='bx bx-x'></i>
         <span class="theMsg">Registration failed!</span>
 
@@ -27,12 +27,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="inputField">
                 <input type="text" class="input" name="regUsername" placeholder="Username"  >
                 <i class="bx bx-user"></i>
+                
             </div>
 
             <div class="inputField">
                 <input type="text" class="inputEmail" name="regEmail"placeholder="E-mail"  >
                 <i class="bx bx-envelope"></i>
                 <div class="regexCheck"></div>
+                <span id="emailExist" > This Email is already in use!</span>
             </div>
 
             <div class="inputField">
@@ -56,8 +58,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div class="payment-plan">
-                <label>Payment Plan:</label>
-                    <select id="payment_plan" name="payment_plan">
+                <select id="payment_plan" name="payment_plan">
+                        <label>Payment Plan:</label>
                         <optgroup label="Payment Plan">
                         <option value="option" selected disabled>Select Option</option>
                         <option value="free">Free</option>
@@ -65,6 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <option value="premium">Enterprise</option>
                         </optgroup>
                     </select> 
+                    <div id="noPlan">no Plan selected!</div>
             </div>
 
             <div class="inputField">

@@ -61,6 +61,9 @@ Het eerste deel van de backend is afgerond. Het opslaan van gegevens in de datab
 ***01-05-2025 - de registratie backend deel 2***
 De code is herzien en aangepast om ervoor te zorgen dat het payment plan correct functioneert. Daarnaast moet er nog worden gezorgd voor aanvullende validaties, zoals het controleren of alle velden zijn ingevuld. Ook dient de regex-validatie naar de backend te worden verplaatst om te controleren of het wachtwoord voldoet aan de vereisten voor sterkte. Verder zijn er al ideeën uitgewerkt om gebruikersvriendelijkheid te verbeteren, bijvoorbeeld door correcte invoer te behouden wanneer slechts één veld onjuist is ingevuld.
 
+***03-05-2025 - de registratie***
+Ik heb nu bijna alle onderdelen afgerond in de registratie. Ik moet alleen nog de payment plannen koppelen aan mijn listbox en dit testen. Daarna ben ik helemaal klaar. Het heeft lang geduurd, maar dan kan ik weer verder met de videoPlaylist.
+
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
 ✅ **Landingspagina** – Met loginlink, kwaliteiten van de site, en een uitgebreide footer  

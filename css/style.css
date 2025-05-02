@@ -177,7 +177,8 @@ label a{
 }
 
 #showBTN{
-    bottom: -69px;
+    display: none;
+
 }
 
 .matchedPass{
@@ -198,6 +199,7 @@ label a{
     color: #ff4757;
     margin-bottom: 10px;
     display: none;
+    margin-right: 70px;
 }
 
 .indicator{
@@ -261,6 +263,13 @@ label a{
 
 .txtStrength.strong{
     color: #23ad5c;
+}
+
+#noName{
+    text-align: center;
+    color: #ff4757;
+    margin-bottom: 10px;
+    display: none;
 }
 
 .header{

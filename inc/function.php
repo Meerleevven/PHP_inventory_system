@@ -115,69 +115,114 @@ function registerCompany(){
         $password = $_POST['regPassword'];
         $confirmPassword = $_POST['regconfirmPas'];
         $paymentPlan = $_POST['payment_plan'];
-    
-        if ($confirmPassword !== $password ) {
-            echo "<script>
-            document.addEventListener('DOMContentLoaded', function() {
-                 document.getElementById('matchedPass').style.display = 'block';
-                 document.getElementById('matchedPass').innerHTML = 'Password does not match!';
-            });
-            </script>";
 
-           
-        } elseif ($paymentPlan === 'option'){
+        if (empty($username) && empty($email) && empty($password) && empty($confirmPassword)) {
+
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById('noName').style.display = 'block';
+                    document.getElementById('noName').innerHTML = 'enter Company Name!';
+                    document.getElementById('emailExist').style.display = 'block';
+                    document.getElementById('emailExist').innerHTML = 'enter Email!';
+                    document.getElementById('txtStrength').style.display = 'block';
+                    document.getElementById('txtStrength').innerHTML = 'Password is too weak!';
+                    document.getElementById('matchedPass').style.display = 'block';
+                    document.getElementById('matchedPass').innerHTML = 'Password does not match!';
+
+                    document.getElementById('failureMsg').style.display = 'block';
+                            setTimeout(() => {
+                            document.getElementById('failureMsg').style.display = 'none';
+                            }, 3000);
+                });
+            </script>";
+        }
+        $passwordRegex = "/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
+    
+        if ($paymentPlan == "") {
             echo "<script>
                 document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('noPlan').style.display = 'block';
-                    document.getElementById('noPlan').innerHTML = 'no plan selected!';
                 });
             </script>";
-        } else {
+
+        }
+        //Zorg ervoor dat de #txtStrength en #matchedPass echt in de HTML aanwezig zijn en niet ergens in een andere display: none wrapper die het verbergt ondanks de inline display: block.
+        elseif ($confirmPassword !== $password || !preg_match($passwordRegex, $password) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // wachtwoord komt niet overeen OF is te zwak
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {";
+        
+            if ($confirmPassword !== $password) {
+                echo "document.getElementById('matchedPass').style.display = 'block';
+                      document.getElementById('matchedPass').innerHTML = 'Password does not match!';";
+            }
+        
+            if (!preg_match($passwordRegex, $password)) {
+                echo "document.getElementById('txtStrength').style.display = 'block';
+                      document.getElementById('txtStrength').innerHTML = 'Password is too weak!';";
+            }
+        
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "document.getElementById('regexCheck').style.display = 'block';
+                      document.getElementById('regexCheck').innerHTML = 'Invalid email!';";
+            }
+            echo "});
+            </script>";
             
-             // Check if username or email already exists
-             $stmt = $conn->prepare("SELECT * FROM company WHERE companyName=? OR companyEmail=?");
-             $stmt->bind_param("ss", $username, $email);
-             $stmt->execute();
-             $result = $stmt->get_result();
-     
+        } else {
+            // Check if username or email already exists
+            $stmt = $conn->prepare("SELECT * FROM company WHERE companyName=? OR companyEmail=?");
+            $stmt->bind_param("ss", $username, $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            
             if ($result->num_rows === 0) {
-                 // Hash the password
-                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-     
-                 // Insert new user into the database
-                 //$stmt = $conn->prepare("INSERT INTO company (companyName, companyEmail, companyPassword, paymentPlanId) VALUES (?, ?, ?, ?)");
-                 //$stmt->bind_param("ssss", $username, $email, $hashedPassword, $paymentPlan);
-     
-                 if ($stmt->execute()) {
-                     echo "<script>
-                         document.addEventListener('DOMContentLoaded', function() {
-                             document.getElementById('successMsg').style.display = 'block';
- 
-                             setTimeout(() => {
-                             document.getElementById('successMsg').style.display = 'none';
-                             }, 3000);
-                         });
-                     </script>";
+                // Hash the password
+                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    
+                //Insert new user into the database
+                // $stmt = $conn->prepare("INSERT INTO company (companyName, companyEmail, companyPassword, paymentPlanId) VALUES (?, ?, ?, ?)");
+                // $stmt->bind_param("ssss", $username, $email, $hashedPassword, $paymentPlan);
+    
+                if ($stmt->execute()) {
+                    echo "<script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            document.getElementById('successMsg').style.display = 'block';
+
+                            setTimeout(() => {
+                            document.getElementById('successMsg').style.display = 'none';
+                            }, 3000);
+                        });
+                    </script>";
                 } else {
-                     echo "<script>
-                         document.addEventListener('DOMContentLoaded', function() {
-                             document.getElementById('failureMsg').style.display = 'block';
-                             
-                             setTimeout(() => {
-                             document.getElementById('failureMsg').style.display = 'none';
-                             }, 3000);
-                         });
-                     </script>";
-                    } 
+                    echo "<script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            document.getElementById('failureMsg').style.display = 'block';
+                            setTimeout(() => {
+                            document.getElementById('failureMsg').style.display = 'none';
+                            }, 3000);
+                        });
+                    </script>";
+                }
             } else {
-                 echo "<script>
-                     document.addEventListener('DOMContentLoaded', function() {
-                         document.getElementById('emailExist').style.display = 'block';
-                     });
-                 </script>";
+                echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById('emailExist').style.display = 'block';
+                    document.getElementById('emailExist').innerHTML = 'Email already exists!';
+                });
+                </script>";
             }
         }
     }
+}
+
+function callpayment(){
+    $conn = connectDB();
+    $stmt = $conn->prepare("SELECT * FROM payment_plan");
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+
 }
 
 function htmlFoot(){

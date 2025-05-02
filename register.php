@@ -25,16 +25,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h3>Register</h3>
         <form action="register.php" method="POST">
             <div class="inputField">
-                <input type="text" class="input" name="regUsername" placeholder="Username"  >
+                <input type="text" class="input" name="regUsername" value="<?php echo isset($_SESSION['form_data']['username']) ? htmlspecialchars($_SESSION['form_data']['username']) : ''; ?> placeholder="Company Name"  >
                 <i class="bx bx-user"></i>
+                <div id="noName"></div>
                 
             </div>
 
             <div class="inputField">
-                <input type="text" class="inputEmail" name="regEmail"placeholder="E-mail"  >
+                <input type="text" class="inputEmail" name="regEmail" value="<?php echo isset($_SESSION['form_data']['email']) ? htmlspecialchars($_SESSION['form_data']['email']) : ''; ?> placeholder="E-mail"  >
                 <i class="bx bx-envelope"></i>
-                <div class="regexCheck"></div>
-                <span id="emailExist" > This Email is already in use!</span>
+                <div class="regexCheck" id="regexCheck"></div>
+                <span id="emailExist"></span>
             </div>
 
             <div class="inputField">
@@ -46,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <span class="meduim"></span>
                     <span class="strong"></span>
                 </div>
-                <div class="txtStrength"></div>
+                <div class="txtStrength" id="txtStrength"></div>
             </div>
 
             <div class="inputField">
@@ -58,14 +59,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div class="payment-plan">
+            <label>Payment Plan:</label>
                 <select id="payment_plan" name="payment_plan">
-                        <label>Payment Plan:</label>
-                        <optgroup label="Payment Plan">
-                        <option value="option" selected disabled>Select Option</option>
-                        <option value="free">Free</option>
+                        <option value="" selected hidden>Select Option</option>
+                        <option value="free" >Free</option>
                         <option value="basic">Pro</option>
                         <option value="premium">Enterprise</option>
-                        </optgroup>
                     </select> 
                     <div id="noPlan">no Plan selected!</div>
             </div>

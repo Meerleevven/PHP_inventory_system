@@ -2,6 +2,8 @@
 include 'inc/function.php';
 htmlHead('IMS', 'Register');
 
+$paymentplan = callpayment();
+
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     registercompany();
 }
@@ -25,14 +27,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h3>Register</h3>
         <form action="register.php" method="POST">
             <div class="inputField">
-                <input type="text" class="input" name="regUsername" value="<?php echo isset($_SESSION['form_data']['username']) ? htmlspecialchars($_SESSION['form_data']['username']) : ''; ?> placeholder="Company Name"  >
+                <input type="text" class="input" name="regUsername" placeholder="companyName">
                 <i class="bx bx-user"></i>
                 <div id="noName"></div>
                 
             </div>
 
             <div class="inputField">
-                <input type="text" class="inputEmail" name="regEmail" value="<?php echo isset($_SESSION['form_data']['email']) ? htmlspecialchars($_SESSION['form_data']['email']) : ''; ?> placeholder="E-mail"  >
+                <input type="text" class="inputEmail" name="regEmail" placeholder="E-mail"  >
                 <i class="bx bx-envelope"></i>
                 <div class="regexCheck" id="regexCheck"></div>
                 <span id="emailExist"></span>
@@ -62,9 +64,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label>Payment Plan:</label>
                 <select id="payment_plan" name="payment_plan">
                         <option value="" selected hidden>Select Option</option>
-                        <option value="free" >Free</option>
-                        <option value="basic">Pro</option>
-                        <option value="premium">Enterprise</option>
+                        <?php
+                        foreach ($paymentplan as $payplan) { ?>
+                        <option value="<?php echo htmlspecialchars($payplan['paymentplanId']); ?>">
+                            <?php echo htmlspecialchars($payplan['paymentplanChoice']); ?>
+                        </option>
+                        <?php } ?>
                     </select> 
                     <div id="noPlan">no Plan selected!</div>
             </div>

@@ -181,8 +181,8 @@ function registerCompany(){
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
                 //Insert new user into the database
-                // $stmt = $conn->prepare("INSERT INTO company (companyName, companyEmail, companyPassword, paymentPlanId) VALUES (?, ?, ?, ?)");
-                // $stmt->bind_param("ssss", $username, $email, $hashedPassword, $paymentPlan);
+                $stmt = $conn->prepare("INSERT INTO company (companyName, companyEmail, companyPassword, paymentPlanId) VALUES (?, ?, ?, ?)");
+                $stmt->bind_param("sssi", $username, $email, $hashedPassword, $paymentPlan);
     
                 if ($stmt->execute()) {
                     echo "<script>
@@ -216,13 +216,22 @@ function registerCompany(){
     }
 }
 
-function callpayment(){
+function callpayment() {
     $conn = connectDB();
-    $stmt = $conn->prepare("SELECT * FROM payment_plan");
+    $stmt = $conn->prepare("SELECT paymentplanId, paymentplanChoice FROM paymentplan");
     $stmt->execute();
     $result = $stmt->get_result();
-    
 
+    if ($result->num_rows > 0) {
+        $paymentplans = $result->fetch_all(MYSQLI_ASSOC);
+        $stmt->close();
+        $conn->close();
+        return $paymentplans;
+    } else {
+        $stmt->close();
+        $conn->close();
+        return [];
+    }
 }
 
 function htmlFoot(){

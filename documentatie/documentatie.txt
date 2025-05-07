@@ -64,6 +64,9 @@ De code is herzien en aangepast om ervoor te zorgen dat het payment plan correct
 ***03-05-2025 - de registratie***
 Ik heb nu bijna alle onderdelen afgerond in de registratie. Ik moet alleen nog de payment plannen koppelen aan mijn listbox en dit testen. Daarna ben ik helemaal klaar. Het heeft lang geduurd, maar dan kan ik weer verder met de videoPlaylist.
 
+***07-05-2025 pt1 - de registratie klaar***
+de registratie pagina is nu helemaal kompleet alles werkt en alles is ook connected.
+
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
 ✅ **Landingspagina** – Met loginlink, kwaliteiten van de site, en een uitgebreide footer  
@@ -123,3 +126,6 @@ https://www.w3schools.com/tags/tag_select.asp
 
 register/login success fail edit
 https://www.youtube.com/watch?v=hm79I2JpwJw
+
+foreign key
+https://www.youtube.com/watch?v=7HTAX0dfJqg

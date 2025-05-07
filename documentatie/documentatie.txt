@@ -67,6 +67,8 @@ Ik heb nu bijna alle onderdelen afgerond in de registratie. Ik moet alleen nog d
 ***07-05-2025 pt1 - de registratie klaar***
 de registratie pagina is nu helemaal kompleet alles werkt en alles is ook connected.
 
+***07/08-05-2025 pt2 - ben begonnen aan de dashboard heb tot nu toe kleine edits gemaakt aan bestaande code en ben ook begonnen aan het maken voor de werknemer user system ik ben echt overboord gegaan maarja hoort erbij tip voor volgende keer schrijf heel duidelijk op wat je wil maken zodat je weet waar aan je begint zodat als je nog extra dingen hebt dat het niet je focus is laat me btw mijn tree ding kijken
+
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
 ✅ **Landingspagina** – Met loginlink, kwaliteiten van de site, en een uitgebreide footer  

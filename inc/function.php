@@ -54,6 +54,7 @@ function logincompany(){
             $_POST['password'] === $row['companyPassword']) {
                 session_start();
                 $_SESSION['companyName'] = $row['companyName'];
+                $_SESSION['companyPhoto'] = $row['companyPhoto'];
                 if (isset($_POST['remember'])) {
                     setcookie('companyName', $row['companyName'], time() + (60*60*24*30), "/");
                     setcookie('cookies_remember', 'true', time() + (60*60*24*30), "/");  // Consistentie: altijd 'true'
@@ -102,6 +103,7 @@ function showTheLogin() {
     if (isset($_SESSION['companyName'])) {
         return $_SESSION['companyName'];
     }
+
     
 }
 

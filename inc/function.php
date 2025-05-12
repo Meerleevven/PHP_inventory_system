@@ -55,6 +55,7 @@ function logincompany(){
                 session_start();
                 $_SESSION['companyName'] = $row['companyName'];
                 $_SESSION['companyPhoto'] = $row['companyPhoto'];
+                $_SESSION['companyId'] = $row['companyId'];
                 if (isset($_POST['remember'])) {
                     setcookie('companyName', $row['companyName'], time() + (60*60*24*30), "/");
                     setcookie('cookies_remember', 'true', time() + (60*60*24*30), "/");  // Consistentie: altijd 'true'
@@ -236,11 +237,70 @@ function callpayment() {
     }
 }
 
+function registeremployee(){
+    $conn = connectDB();
+    
+        if(isset($_POST['workerName']) && isset($_POST['workerEmail']) && isset($_POST['workerPassword'])){
+            $username = $_POST['workerName'];
+            $email = $_POST['workerEmail'];
+            $password = $_POST['workerPassword'];
+            $companyId = $_SESSION['companyId'];
+            
+            if(empty($username) || empty($email) || empty($password)) {
+                echo "<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.getElementById('failureMsg').style.display = 'block';
+                        setTimeout(() => {
+                        document.getElementById('failureMsg').style.display = 'none';
+                        }, 3000);
+                        });
+                    </script>";
+            }
+            else{
+                $stmt = $conn->prepare("SELECT * FROM worker WHERE workerName=? OR workerEmail=?");
+                $stmt->bind_param("ss", $username, $email);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                if ($result->num_rows === 0) {
+                    // Hash the password
+                    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        
+                    //Insert new user into the database
+                    //$stmt = $conn->prepare("INSERT INTO worker (companyId ,workerName, workerEmail, workerPass) VALUES (?, ?, ?, ?)");
+                    //$stmt->bind_param("isss",$companyId, $username, $email, $hashedPassword);
+        
+                    if ($stmt->execute()) {
+                        echo "<script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                document.getElementById('successMsg').style.display = 'block';
+    
+                                setTimeout(() => {
+                                document.getElementById('successMsg').style.display = 'none';
+                                }, 3000);
+                            });
+                        </script>";
+                    } else {
+                        echo "<script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                document.getElementById('failureMsg').style.display = 'block';
+                                setTimeout(() => {
+                                document.getElementById('failureMsg').style.display = 'none';
+                                }, 3000);
+                            });
+                        </script>";
+                    }
+                }
+            }
+        }
+        
+}
+
 function htmlFoot(){
 
     ?>
     </body>
     </html>
-    <?php
-    }
-    ?>
+<?php
+}
+?>

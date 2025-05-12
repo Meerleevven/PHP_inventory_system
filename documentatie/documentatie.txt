@@ -69,6 +69,8 @@ de registratie pagina is nu helemaal kompleet alles werkt en alles is ook connec
 
 ***07/08-05-2025 pt2 - ben begonnen aan de dashboard heb tot nu toe kleine edits gemaakt aan bestaande code en ben ook begonnen aan het maken voor de werknemer user system ik ben echt overboord gegaan maarja hoort erbij tip voor volgende keer schrijf heel duidelijk op wat je wil maken zodat je weet waar aan je begint zodat als je nog extra dingen hebt dat het niet je focus is laat me btw mijn tree ding kijken
 
+***12-05-20205 - ben heb de frontend van de dashboard add employee af ben nu bezig met de backend en zorgen dat dat klopt
+
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
 ✅ **Landingspagina** – Met loginlink, kwaliteiten van de site, en een uitgebreide footer  

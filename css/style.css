@@ -601,11 +601,14 @@ height: 100px;
     width: 80%;
     height: auto;
     background:  #E4E4E4; 
+    padding: 5px;
 }
 
-.dbtopNav{
+.dbtopNav {
     padding: 30px;
-    background: #e4e4e4;
+    background: #ffffff;
+    border-radius: 7px;
+    
 }
 
 .dbtopNav a{
@@ -619,32 +622,95 @@ height: 100px;
 }
 
 
-div.dbContent{
-    padding: 0px 5px 5px;
+.dbContent{
+    padding: 7px 0px 5px 0px;
 }
 
 .dbcontent-Min{
     /* background:  #E4E4E4; */
     min-height: 450px;
     height: 100%;
-    color: #000000;
+    color: #323232;
     background: #ffffff;
     border-radius: 5px;
 }
 
 .addEmployee{
-    width: 50%;
+    margin-top: 10px;
+    width: 65%;
     margin: 0 auto;
     padding: 10px;
-    border: 1px solid #b5ffb5;
+    border: 2px solid #b5ffb5;
     border-radius: 5px;
+    background: #8483833f;
 }
 
 .appformInput{
     width: 100%;
     height: 45px;
     outline: none;
-    border-radius: 30px;
-    color: #000000;
-    padding: 0 0 0 45px;
+    border-radius: 15px;
+    border-style: none;
+    padding: 0 0 0 30px;
 }
+
+.appforminputContainer{
+    margin-bottom: 15px;
+}
+
+#useraddformContainer{  
+    padding-top: 20px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.column-5{
+    width: 49.50%;
+}
+
+.column-7{
+    width: 49.50%;
+}
+
+.sectionHeader{
+    border: 3px solid #b5ffb5;
+    height: 60px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #B5FFB5;
+    font-size: 30px;
+}
+.sectionHeader h1{
+    color: #323232;
+    font-size: 30px;
+    position: relative;
+    bottom: 45px;
+    left: 35px;
+}
+
+#userlistContainer{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+table, th, td {
+    border: 2px solid #b5ffb5;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: left;
+}
+
+table {
+    width: 98%;
+}
+
+td{
+    font-size: 16px;
+}
+

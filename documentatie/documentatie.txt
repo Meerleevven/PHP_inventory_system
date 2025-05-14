@@ -74,6 +74,9 @@ de registratie pagina is nu helemaal kompleet alles werkt en alles is ook connec
 ***14-05-2025 - dbemployee.php***
 ik heb deze pagina zo goed als af alleen ben ik fout gegaan met de paymentplanId ik wil zeg maar als de plan 2 of 3 niet is dat je er niet inkomt verder ga ik ook nog een login plan voor de employee maken.
 
+***15-05-2025 - dbemployee.php***
+hij is nu helemaal af ik ga nu de worker inlog systeem maken.
+
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
 ✅ **Landingspagina** – Met loginlink, kwaliteiten van de site, en een uitgebreide footer  

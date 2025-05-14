@@ -41,7 +41,7 @@ function logincompany(){
         $username = $_POST['username'];
         $password = ($_POST['password']);
         
-        $stmt = $conn->prepare("SELECT * FROM company WHERE companyName=? OR companyEmail=?");
+        $stmt = $conn->prepare("SELECT company.*, paymentplan.paymentplanId FROM company LEFT JOIN paymentplan ON company.paymentplanId = paymentplan.paymentplanId WHERE companyName=? OR companyEmail=?");        
         $stmt->bind_param("ss", $username, $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -56,6 +56,7 @@ function logincompany(){
                 $_SESSION['companyName'] = $row['companyName'];
                 $_SESSION['companyPhoto'] = $row['companyPhoto'];
                 $_SESSION['companyId'] = $row['companyId'];
+                $_SESSION['paymentplanId'] = $row['paymentplanId']; 
                 if (isset($_POST['remember'])) {
                     setcookie('companyName', $row['companyName'], time() + (60*60*24*30), "/");
                     setcookie('cookies_remember', 'true', time() + (60*60*24*30), "/");  // Consistentie: altijd 'true'
@@ -280,7 +281,7 @@ function registeremployee(){
                                 }, 3000);
                             });
                         </script>";
-                        header("Location: login.php");
+                        header("Location: dbemployee.php");
                     } else {
                         echo "<script>
                             document.addEventListener('DOMContentLoaded', function() {
@@ -308,6 +309,59 @@ function showEmployee() {
     $conn->close();
     return $employee;
 
+}
+
+function loginEmployee(){
+    $conn = connectDB();
+    
+    if(isset($_POST['username']) && isset($_POST['password'])){
+        $username = $_POST['username'];
+        $password = ($_POST['password']);
+        
+        $stmt = $conn->prepare("SELECT * FROM worker WHERE workerName=? OR workerEmail=?");        
+        $stmt->bind_param("ss", $username, $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+
+        if ($result->num_rows === 1) {
+            $row = $result->fetch_assoc();
+            // Wachtwoord vergelijken met database-hash
+            if (password_verify($_POST['password'], $row['workerPass']) || 
+            $_POST['password'] === $row['workerPass']) {
+                session_start();
+                $_SESSION['workerName'] = $row['workerName'];
+                $_SESSION['workerPhoto'] = $row['workerPhoto'];
+                $_SESSION['workerId'] = $row['workerId'];
+                header("Location: dashboard.php");
+                exit();
+            } else {
+                echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById('foutMessage').style.display = 'block';
+                    document.getElementById('errorUser').style.display = 'none';
+                    
+                    setTimeout(() => {
+                    document.getElementById('foutMessage').style.display = 'none';
+                    }, 3000);
+                });
+                </script>";
+            }
+    } 
+    else {
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById('foutMessage').style.display = 'block';
+                    document.getElementById('errorUser').style.display = 'block';
+                    document.getElementById('errorWachtwoord').style.display = 'none';
+                    
+                    setTimeout(() => {
+                    document.getElementById('foutMessage').style.display = 'none';
+                    }, 3000);
+                });
+                </script>";;
+    }
+}
 }
 
 function htmlFoot(){

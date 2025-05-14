@@ -3,16 +3,13 @@ include 'inc/function.php';
 htmlHead('IMS', 'Dashboard');
 
 session_start();
-$paymentplan = callpayment();
 $useraccname = showTheLogin();
 $userphoto = $_SESSION['companyPhoto'] ?? 'default.png';
 $employeeList = showEmployee();
-// if (!isset($_SESSION['paymentplanId']) || ($_SESSION['paymentplanId'] != 2 && $_SESSION['paymentplanId'] != 3)) {
-//     header("Location: dashboard.php");
-//     exit();
-// }
-
-var_dump($_SESSION['paymentplanId']);
+if (!isset($_SESSION['paymentplanId']) || ($_SESSION['paymentplanId'] != 2 && $_SESSION['paymentplanId'] != 3)) {
+    header("Location: dashboard.php");
+    exit();
+}
 
 if (!isset($_SESSION['companyName'])) {
     header("Location: login.php");

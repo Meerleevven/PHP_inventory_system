@@ -267,8 +267,8 @@ function registeremployee(){
                     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         
                     //Insert new user into the database
-                    //$stmt = $conn->prepare("INSERT INTO worker (companyId ,workerName, workerEmail, workerPass) VALUES (?, ?, ?, ?)");
-                    //$stmt->bind_param("isss",$companyId, $username, $email, $hashedPassword);
+                    $stmt = $conn->prepare("INSERT INTO worker (companyId ,workerName, workerEmail, workerPass) VALUES (?, ?, ?, ?)");
+                    $stmt->bind_param("isss",$companyId, $username, $email, $hashedPassword);
         
                     if ($stmt->execute()) {
                         echo "<script>
@@ -280,6 +280,7 @@ function registeremployee(){
                                 }, 3000);
                             });
                         </script>";
+                        header("Location: login.php");
                     } else {
                         echo "<script>
                             document.addEventListener('DOMContentLoaded', function() {
@@ -294,6 +295,19 @@ function registeremployee(){
             }
         }
         
+}
+
+function showEmployee() {
+    $conn = connectDB();
+    $stmt = $conn->prepare("SELECT * FROM worker WHERE companyId = ?");
+    $stmt->bind_param("i", $_SESSION['companyId']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $employee = $result->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+    $conn->close();
+    return $employee;
+
 }
 
 function htmlFoot(){

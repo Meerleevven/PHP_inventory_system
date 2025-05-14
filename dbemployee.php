@@ -3,15 +3,23 @@ include 'inc/function.php';
 htmlHead('IMS', 'Dashboard');
 
 session_start();
+$paymentplan = callpayment();
 $useraccname = showTheLogin();
 $userphoto = $_SESSION['companyPhoto'] ?? 'default.png';
+$employeeList = showEmployee();
+// if (!isset($_SESSION['paymentplanId']) || ($_SESSION['paymentplanId'] != 2 && $_SESSION['paymentplanId'] != 3)) {
+//     header("Location: dashboard.php");
+//     exit();
+// }
+
+var_dump($_SESSION['paymentplanId']);
+
 if (!isset($_SESSION['companyName'])) {
     header("Location: login.php");
     exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    print_r($_SESSION);
     registeremployee();
 }
 
@@ -61,17 +69,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <table class="userlistTable">
                                 <thead>
                                     <tr>
+                                        <th>company</th>
                                         <th>name</th>
                                         <th>email</th>
-                                        <th>password</th>
                                     </tr>
                                 </thead>
                                 <tbody id="userListBody">
+                                <?php foreach ($employeeList as $employee): ?>
                                     <tr>
-                                        <td>hoi</td>
-                                        <td>ambatukam@gmail.com</td>
-                                        <td>********</td>
+                                        <td><?=htmlspecialchars($useraccname)?></td>
+                                        <td><?= htmlspecialchars($employee['workerName']) ?></td>
+                                        <td><?= htmlspecialchars($employee['workerEmail']) ?></td>
                                     </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                     </div>

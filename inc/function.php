@@ -80,17 +80,7 @@ function logincompany(){
             }
     } 
     else {
-            echo "<script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    document.getElementById('foutMessage').style.display = 'block';
-                    document.getElementById('errorUser').style.display = 'block';
-                    document.getElementById('errorWachtwoord').style.display = 'none';
-                    
-                    setTimeout(() => {
-                    document.getElementById('foutMessage').style.display = 'none';
-                    }, 3000);
-                });
-                </script>";;
+        loginEmployee();
     }
     
 }
@@ -339,7 +329,7 @@ function loginEmployee(){
                 echo "<script>
                 document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('foutMessage').style.display = 'block';
-                    document.getElementById('errorUser').style.display = 'none';
+                    document.getElementById('errorWachtwoord').style.display = 'none';
                     
                     setTimeout(() => {
                     document.getElementById('foutMessage').style.display = 'none';
@@ -353,15 +343,23 @@ function loginEmployee(){
                 document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('foutMessage').style.display = 'block';
                     document.getElementById('errorUser').style.display = 'block';
-                    document.getElementById('errorWachtwoord').style.display = 'none';
                     
                     setTimeout(() => {
                     document.getElementById('foutMessage').style.display = 'none';
                     }, 3000);
                 });
-                </script>";;
+                </script>";
     }
 }
+}
+
+function deleteEmployee($workerId) {
+    $conn = connectDB();
+    $stmt = $conn->prepare("DELETE FROM worker WHERE workerId = ?");
+    $stmt->bind_param("i", $workerId);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
 }
 
 function htmlFoot(){

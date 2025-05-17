@@ -74,9 +74,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <tbody id="userListBody">
                                 <?php foreach ($employeeList as $employee): ?>
                                     <tr>
-                                        <td><?=htmlspecialchars($useraccname)?></td>
+                                        <td><?= htmlspecialchars($useraccname)?></td>
                                         <td><?= htmlspecialchars($employee['workerName']) ?></td>
                                         <td><?= htmlspecialchars($employee['workerEmail']) ?></td>
+                                        <td><a href="deleteemployee.php?id=<?= $employee['workerId'] ?>" class="deleteBtn"><i class='bx bx-trash'></i></a></td>
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>

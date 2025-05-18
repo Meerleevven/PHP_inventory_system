@@ -52,7 +52,6 @@ function logincompany(){
             // Wachtwoord vergelijken met database-hash
             if (password_verify($_POST['password'], $row['companyPassword']) || 
             $_POST['password'] === $row['companyPassword']) {
-                session_start();
                 $_SESSION['companyName'] = $row['companyName'];
                 $_SESSION['companyPhoto'] = $row['companyPhoto'];
                 $_SESSION['companyId'] = $row['companyId'];
@@ -80,7 +79,17 @@ function logincompany(){
             }
     } 
     else {
-        loginEmployee();
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('foutMessage').style.display = 'block';
+            document.getElementById('errorUser').style.display = 'block';
+            document.getElementById('errorWachtwoord').style.display = 'none';
+                        
+           setTimeout(() => {
+               document.getElementById('foutMessage').style.display = 'none';
+            }, 3000);
+            });
+            </script>";;
     }
     
 }
@@ -91,10 +100,14 @@ function logincompany(){
 function showTheLogin() {
 
     logincompany();
+    loginEmployee();
 
     if (isset($_SESSION['companyName'])) {
         return $_SESSION['companyName'];
+    } else if (isset($_SESSION['workerName'])) {
+        return $_SESSION['workerName'];
     }
+
 
     
 }
@@ -319,7 +332,6 @@ function loginEmployee(){
             // Wachtwoord vergelijken met database-hash
             if (password_verify($_POST['password'], $row['workerPass']) || 
             $_POST['password'] === $row['workerPass']) {
-                session_start();
                 $_SESSION['workerName'] = $row['workerName'];
                 $_SESSION['workerPhoto'] = $row['workerPhoto'];
                 $_SESSION['workerId'] = $row['workerId'];
@@ -342,7 +354,7 @@ function loginEmployee(){
             echo "<script>
                 document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('foutMessage').style.display = 'block';
-                    document.getElementById('errorUser').style.display = 'block';
+                    document.getElementById('errorUser').style.display = 'none';
                     
                     setTimeout(() => {
                     document.getElementById('foutMessage').style.display = 'none';
@@ -357,9 +369,18 @@ function deleteEmployee($workerId) {
     $conn = connectDB();
     $stmt = $conn->prepare("DELETE FROM worker WHERE workerId = ?");
     $stmt->bind_param("i", $workerId);
-    $stmt->execute();
-    $stmt->close();
-    $conn->close();
+    if ($stmt->execute()) {
+        
+    } else {
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('failureMsg').style.display = 'block';
+                setTimeout(() => {
+                document.getElementById('failureMsg').style.display = 'none';
+                }, 3000);
+            });
+        </script>";
+    }
 }
 
 function htmlFoot(){

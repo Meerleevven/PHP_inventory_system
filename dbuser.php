@@ -1,6 +1,6 @@
 <?php
 include 'inc/function.php';
-htmlHead('IMS', 'Dashboard');
+htmlHead('IMS', 'User');
 
 session_start();
 $useraccname = showTheLogin();

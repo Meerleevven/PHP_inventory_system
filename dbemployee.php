@@ -1,20 +1,21 @@
 <?php
 include 'inc/function.php';
-htmlHead('IMS', 'Dashboard');
+htmlHead('IMS', 'Employee');
 
 session_start();
 $useraccname = showTheLogin();
-$userphoto = $_SESSION['companyPhoto'] ?? 'default.png';
+$userphoto = $_SESSION['companyPhoto'] ?? $_SESSION['workerPhoto'] ?? 'default.png';  
 $employeeList = showEmployee();
 if (!isset($_SESSION['paymentplanId']) || ($_SESSION['paymentplanId'] != 2 && $_SESSION['paymentplanId'] != 3)) {
     header("Location: dashboard.php");
     exit();
 }
 
-if (!isset($_SESSION['companyName'])) {
+if (!isset($_SESSION['companyName']) && !isset($_SESSION['workerName'])) {
     header("Location: login.php");
     exit();
 }
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     registeremployee();

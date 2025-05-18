@@ -1,16 +1,21 @@
 <?php
+session_start();
 include 'inc/function.php';
 htmlHead('IMS', 'Login');
 
-session_start();
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    logincompany();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (!logincompany()) {
+        loginEmployee();
+    }
 }
 
-if (isset($_SESSION['companyName'])) {
+
+
+if (isset($_SESSION['companyName']) || isset($_SESSION['workerName'])) {	
     header("Location: dashboard.php");
     exit();
 }
+
 
 $disp_email = !empty($_COOKIE['companyName']) ? $_COOKIE['companyName'] : '';
 $checked = isset($_COOKIE['cookies_remember']) ? "checked" : '';  
@@ -60,7 +65,7 @@ $checked = isset($_COOKIE['cookies_remember']) ? "checked" : '';
             <label>
                 <a href="#">Register new account</a>
             </label>
-            </divr>
+            </div>
         </form>
 
     </div>

@@ -80,6 +80,9 @@ hij is nu helemaal af ik ga nu de worker inlog systeem maken.
 ***17-05-2025 dbemployee.php***
 heb een delete employee toegevoegd.
 
+***18-05-2025 - worker***
+je kan nu ook inloggen met de worker ik ga de de dbuser maken.
+
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
 ✅ **Landingspagina** – Met loginlink, kwaliteiten van de site, en een uitgebreide footer  

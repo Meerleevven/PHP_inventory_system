@@ -24,14 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <body>
 <div class="successMsg" id="successMsg">
-        <i class='bx bx-check'></i>
-        <span class="theMsg">Registration successful!</span>
-    </div>
-    <div class="failureMsg" id="failureMsg">
-        <i class='bx bx-x'></i>
-        <span class="theMsg">Registration failed!</span>
-
-    </div>
+    <i class='bx bx-check'></i>
+    <span class="theMsg">Registration successful!</span>
+</div>
+<div class="failureMsg" id="failureMsg">
+    <i class='bx bx-x'></i>
+    <span class="theMsg">Registration failed!</span>
+</div>
     <div id="dbMainContainer">
         <?php include ('partials/dbsidebar.php') ?>
         <div class="dbcontent-Container" id="dbcontent_Container">

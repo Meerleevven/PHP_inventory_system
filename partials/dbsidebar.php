@@ -6,9 +6,12 @@
     </div>
     <div class="dbsidebar-Menus">
         <div class="dbsidebar-menuList" id="dbsidebar_menuList">
-            <li class="menuActive"><a href="#"><i class="fa-solid fa-house menuIcons"></i><span class="menuText"> Dashboard</span></a></li>
-            <li><a href="#"><i class="fa-solid fa-user menuIcons"></i><span class="menuText"> User</span></a></li>
-            <li><a href="#"><i class="fa-solid fa-list"></i><span class="menuText"> Employee</span></a></li>
+                <?php $Url = pagernavigation(5); ?>
+            <li class="menuActive"><a href="<?= $Url ?>"><i class="fa-solid fa-house menuIcons"></i><span class="menuText"> Dashboard</span></a></li>
+                <?php $Url = pagernavigation(6); ?>
+            <li><a href="<?= $Url ?>"><i class="fa-solid fa-user menuIcons"></i><span class="menuText"> User</span></a></li>
+                <?php $Url = pagernavigation(7); ?>
+            <li><a href="<?= $Url ?>"><i class="fa-solid fa-list"></i><span class="menuText"> Employee</span></a></li>
             <li><a href="#"><i class="fa-solid fa-warehouse menuIcons"></i><span class="menuText"> Storage</span></a></li>
             <li><a href="#"><i class="fa-solid fa-chart-simple menuIcons"></i><span class="menuText"> Perfomance</span></a></li>
             <li><a href="#"><i class="fa-solid fa-database menuIcons"></i><span class="menuText"> Database</span></a></li>

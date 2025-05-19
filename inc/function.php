@@ -383,6 +383,155 @@ function deleteEmployee($workerId) {
     }
 }
 
+function updateworkerpassword(){
+    $conn = connectDB();
+
+    if(isset($_POST['newPassword']) && isset($_POST['confirmnewpass'])){
+        $newPassword = $_POST['newPassword'];
+        $confirmnewpass = $_POST['confirmnewpass'];
+        $workerId = $_SESSION['workerId'];
+        if (empty($newPassword) || empty($confirmnewpass)) {
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById('failureMsg').style.display = 'block';
+                    setTimeout(() => {
+                    document.getElementById('failureMsg').style.display = 'none';
+                    }, 3000);
+                });
+            </script>";
+        }
+        $passwordRegex = "/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
+        if ($confirmnewpass !== $newPassword || !preg_match($passwordRegex, $newPassword)) {
+            // wachtwoord komt niet overeen OF is te zwak
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {";
+        
+            if ($confirmnewpass !== $newPassword) {
+                echo "document.getElementById('matchedPass').style.display = 'block';
+                      document.getElementById('matchedPass').innerHTML = 'Password does not match!';";
+            }
+        
+            if (!preg_match($passwordRegex, $newPassword)) {
+                echo "document.getElementById('txtStrength').style.display = 'block';
+                      document.getElementById('txtStrength').innerHTML = 'Password is too weak!';";
+            }
+            echo "});
+            </script>";
+            
+        } else {
+            // Hash the password
+            $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+    
+            //Insert new user into the database
+            $stmt = $conn->prepare("UPDATE worker SET workerPass=? WHERE workerId=?");
+            $stmt->bind_param("si", $hashedPassword, $workerId);
+    
+            if ($stmt->execute()) {
+                echo "<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.getElementById('successMsg').style.display = 'block';
+
+                        setTimeout(() => {
+                        document.getElementById('successMsg').style.display = 'none';
+                        }, 3000);
+                    });
+                </script>";
+                header('Location: dashboard.php');
+            } else {
+                echo "<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.getElementById('failureMsg').style.display = 'block';
+                        setTimeout(() => {
+                        document.getElementById('failureMsg').style.display = 'none';
+                        }, 3000);
+                    });
+                </script>";
+            }
+        }
+    }
+}
+
+function updatecompanypassword(){
+    $conn = connectDB();
+
+    if(isset($_POST['newPassword']) && isset($_POST['confirmnewpass'])){
+        $newPassword = $_POST['newPassword'];
+        $confirmnewpass = $_POST['confirmnewpass'];
+        $companyId = $_SESSION['companyId'];
+        if (empty($newPassword) || empty($confirmnewpass)) {
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById('failureMsg').style.display = 'block';
+                    setTimeout(() => {
+                    document.getElementById('failureMsg').style.display = 'none';
+                    }, 3000);
+                });
+            </script>";
+        }
+        $passwordRegex = "/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
+        if ($confirmnewpass !== $newPassword || !preg_match($passwordRegex, $newPassword)) {
+            // wachtwoord komt niet overeen OF is te zwak
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {";
+        
+            if ($confirmnewpass !== $newPassword) {
+                echo "document.getElementById('matchedPass').style.display = 'block';
+                      document.getElementById('matchedPass').innerHTML = 'Password does not match!';";
+            }
+        
+            if (!preg_match($passwordRegex, $newPassword)) {
+                echo "document.getElementById('txtStrength').style.display = 'block';
+                      document.getElementById('txtStrength').innerHTML = 'Password is too weak!';";
+            }
+            echo "});
+            </script>";
+            
+        } else {
+            // Hash the password
+            $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+    
+            //Insert new user into the database
+            $stmt = $conn->prepare("UPDATE company SET companyPassword=? WHERE companyId=?");
+            $stmt->bind_param("si", $hashedPassword, $companyId);
+    
+            if ($stmt->execute()) {
+                echo "<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.getElementById('successMsg').style.display = 'block';
+
+                        setTimeout(() => {
+                        document.getElementById('successMsg').style.display = 'none';
+                        }, 3000);
+                    });
+                </script>";
+                header('Location: dashboard.php');
+            } else {
+                echo "<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.getElementById('failureMsg').style.display = 'block';
+                        setTimeout(() => {
+                        document.getElementById('failureMsg').style.display = 'none';
+                        }, 3000);
+                    });
+                </script>";
+            }
+        }
+    }
+}
+
+function pagernavigation($navId){
+    $conn = connectDB();
+    $stmt = $conn->prepare("SELECT navLink FROM nav WHERE navId=?");
+    $stmt->bind_param("i", $navId);
+    $stmt->execute();
+    $stmt->bind_result($navLink);
+    $stmt->fetch();
+    $stmt->close();
+    $conn->close();
+    return $navLink;
+
+}
+
 function htmlFoot(){
 
     ?>

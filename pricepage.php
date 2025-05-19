@@ -5,7 +5,8 @@ htmlHead('IMS', 'Prijs pagina');
 <body>
 <div class="header"></div>
 <div class="banner" id="priceBanner">
-    <div class="loginBtn"><a href="">log in</a></div>
+    <?php $Url = pagernavigation(3); ?>
+    <div class="loginBtn"><a href="<?= $Url ?>">log in</a></div>
         <div class="homepageContainer">
             <div class="bannerFeature">
                 <div class="bannerFeatures">
@@ -15,7 +16,8 @@ htmlHead('IMS', 'Prijs pagina');
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. 
                     </p>
                     <hr>
-                    <a href="">Select Plan</a>
+                    <?php $Url = pagernavigation(4); ?>
+                    <a href="<?= $Url ?>">Select Plan</a>
                 </div>
                 <div class="bannerFeatures">
                     <h3>Pro &euro;10</h3><p>Medium businesses</p>
@@ -24,7 +26,8 @@ htmlHead('IMS', 'Prijs pagina');
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. 
                     </p>
                     <hr>
-                    <a href="">Select Plan</a>
+                    <?php $Url = pagernavigation(4); ?>
+                    <a href="<?= $Url ?>">Select Plan</a>
                 </div>
                 <div class="bannerFeatures">
                     <h3>Enterprise &euro;20</h3> <p>Large businesses</p>
@@ -33,7 +36,8 @@ htmlHead('IMS', 'Prijs pagina');
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. 
                     </p>
                     <hr>
-                    <a href="">Select Plan</a>
+                    <?php $Url = pagernavigation(4); ?>
+                    <a href="<?= $Url ?>">Select Plan</a>
                 </div>
             </div>
         </div>

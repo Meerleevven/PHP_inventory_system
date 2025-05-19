@@ -5,7 +5,8 @@ htmlHead('IMS', 'Homepagina ');
 <body>
     <div class="header"></div>
     <div class="banner">
-    <div class="loginBtn"><a href="">log in</a></div>
+        <?php $Url = pagernavigation(3); ?>
+    <div class="loginBtn"><a href="<?= $Url ?>">log in</a></div>
             <div class="homepageContainer">
             <div class="bannerHeader">
             <h1 id="txt1" class="txtGreen">The</h1>
@@ -24,7 +25,8 @@ htmlHead('IMS', 'Homepagina ');
             <a href="#"><i class='bx bxl-apple'></i></a>
             <a href="#"><i class='bx bxl-android'></i></a>
         </div>
-            <div class="btnTogo"><a href="#">Get Started</a></div>
+            <?php $Url = pagernavigation(2); ?>
+            <div class="btnTogo"><a href="<?= $Url ?>">Get Started</a></div>
         </div>
         </div>
     </div>

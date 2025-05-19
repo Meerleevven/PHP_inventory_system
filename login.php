@@ -63,7 +63,8 @@ $checked = isset($_COOKIE['cookies_remember']) ? "checked" : '';
 
             <div class="register">
             <label>
-                <a href="#">Register new account</a>
+                <?php $Url = pagernavigation(4); ?>
+                <a href="<?= $Url ?>">Register new account</a>
             </label>
             </div>
         </form>

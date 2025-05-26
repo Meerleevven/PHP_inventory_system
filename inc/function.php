@@ -101,6 +101,7 @@ function showTheLogin() {
 
     logincompany();
     loginEmployee();
+    
 
     if (isset($_SESSION['companyName'])) {
         return $_SESSION['companyName'];
@@ -423,8 +424,9 @@ function updateworkerpassword(){
             $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
     
             //Insert new user into the database
-            $stmt = $conn->prepare("UPDATE worker SET workerPass=? WHERE workerId=?");
-            $stmt->bind_param("si", $hashedPassword, $workerId);
+            $stmt = $conn->prepare("UPDATE worker SET workerPass=? WHERE workerId=? OR workerEmail=?");
+
+            $stmt->bind_param("ssi", $hashedPassword, $workerId, $_SESSION['workerEmail']);
     
             if ($stmt->execute()) {
                 echo "<script>
@@ -491,8 +493,8 @@ function updatecompanypassword(){
             $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
     
             //Insert new user into the database
-            $stmt = $conn->prepare("UPDATE company SET companyPassword=? WHERE companyId=?");
-            $stmt->bind_param("si", $hashedPassword, $companyId);
+            $stmt = $conn->prepare("UPDATE company SET companyPassword=? WHERE companyId=? OR companyEmail=?");
+            $stmt->bind_param("ssi", $hashedPassword, $companyId, $_SESSION['companyEmail']);
     
             if ($stmt->execute()) {
                 echo "<script>
@@ -530,6 +532,44 @@ function pagernavigation($navId){
     $conn->close();
     return $navLink;
 
+}
+
+function getworkerEmail($workeremail) {
+    $conn = connectDB();
+    $stmt = $conn->prepare("SELECT workerId, workerEmail FROM worker WHERE workerEmail = ?");
+    $stmt->bind_param("s", $workeremail);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $_SESSION['workerEmail'] = $row['workerEmail'];
+        $_SESSION['workerId'] = $row['workerId']; // Sla ook het ID op
+        return true;
+    }
+    
+    $stmt->close();
+    $conn->close();
+    return false;
+}
+
+function getcompanyEmail($companyemail) {
+    $conn = connectDB();
+    $stmt = $conn->prepare("SELECT companyId, companyEmail FROM company WHERE companyEmail = ?");
+    $stmt->bind_param("s", $companyemail);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $_SESSION['companyEmail'] = $row['companyEmail'];
+        $_SESSION['companyId'] = $row['companyId']; 
+        return true;
+    }
+    
+    $stmt->close();
+    $conn->close();
+    return false;
 }
 
 function htmlFoot(){

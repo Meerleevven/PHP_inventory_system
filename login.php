@@ -33,21 +33,17 @@ $checked = isset($_COOKIE['cookies_remember']) ? "checked" : '';
     <div class="loginBody">
         <h3>Login</h3>
         <form action="login.php" method="POST">
-            <div class="inputField">
-                <input type="text" class="input" name="username" placeholder="Username" required value="<?php echo htmlspecialchars($disp_email, ENT_QUOTES, 'UTF-8'); ?>">
+            <div class="inputField" id="inputfieldLog">
+                <input type="text" class="input" name="username" placeholder="Username or Email" required value="<?php echo htmlspecialchars($disp_email, ENT_QUOTES, 'UTF-8'); ?>">
                 <i class="bx bx-user"></i>
-                    <div class="forget">
-                        <label>
-                    <a href="#">Forget username</a>
-                        </label>
-                    </div>
                 </div>
             <div class="inputField">
                 <input type="password" class="input" name="password" placeholder="password" required>
                 <i class="bx bx-lock"></i>
                     <div class="forget">
                         <label>
-                    <a href="#">Forget password</a>
+                    <?php $Url = pagernavigation(6); ?>
+                    <a href="<?= $Url ?>">Forget password</a>
                         </label>
                     </div>
             </div>

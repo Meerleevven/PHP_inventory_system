@@ -1,17 +1,19 @@
 <?php
 include 'inc/function.php';
-htmlHead('IMS', 'Login');
+htmlHead('IMS', 'Reset Password');
 session_start();
-if (!isset($_SESSION['companyName']) && !isset($_SESSION['workerName'])) {
-    header("Location: login.php");
-    exit();
+if (!isset($_SESSION['companyId']) && !isset($_SESSION  ['workerId'])) {
+    if (!isset($_SESSION['companyEmail']) && !isset($_SESSION['workerEmail'])) {
+        header("Location: login.php");
+        exit();
+    }
 }
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!updatecompanypassword()){
     updateworkerpassword(); 
     }
 }
+var_dump($_SESSION);
 $useraccname = showTheLogin();
 ?>
 <body id="loginBODY">
@@ -31,7 +33,7 @@ $useraccname = showTheLogin();
     <div class="loginBody">
         <h3>Reset password</h3>
         <div class="name"><span><?= htmlspecialchars($useraccname) ?></span></div>
-        <form action="newpassword.php" method="POST">
+        <form action="resetpassword.php" method="POST">
             <div class="inputField">
                 <input onkeyup="trigger()" type="password" class="inputPas" name="newPassword" placeholder="New password" required>
                 <i class="bx bx-lock"></i>

@@ -166,6 +166,10 @@ label a{
     margin-top: 10px;
 }
 
+#inputfieldLog{
+    margin: 10px auto;
+}
+
 .showBtn{
     position: absolute;
     bottom: 53px;

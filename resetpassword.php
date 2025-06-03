@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     updateworkerpassword(); 
     }
 }
-var_dump($_SESSION);
+
 $useraccname = showTheLogin();
 ?>
 <body id="loginBODY">

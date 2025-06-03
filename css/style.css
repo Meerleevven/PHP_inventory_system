@@ -721,3 +721,56 @@ td{
     text-align: center;
     margin-bottom: 12px;
 }
+
+#settingsContainer img{
+    width: 110px;
+    height: 110px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid #b5ffb5;
+    margin-right: 20px;
+}
+
+.settingsRow {
+    padding: 10px;
+}
+
+.userforminputContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+
+}
+
+#enterImage{
+    margin-top: 40px;
+}
+
+.usersetInput{
+    background-color: #E4E4E4;
+    width: auto;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+#userforminputPassword a{
+    position: relative;
+    display: inline-block; /* of block als je wil dat het volledige breedte pakt */
+    padding-bottom: 5px; /* ruimte voor je onderlijntje */
+}
+
+#userforminputPassword a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #b5ffb5;
+    transition: all 0.5s ease; /* animatie voor de breedte */
+}
+#userforminputPassword a:hover::before {
+  width: 100%;
+}

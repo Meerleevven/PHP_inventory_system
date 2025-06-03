@@ -163,3 +163,22 @@ document.addEventListener('DOMContentLoaded', () => {
     email.addEventListener('input', validateEmail);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const editBtn = document.getElementById('btnEdit');
+    const nameSpace = document.getElementById('userInput');
+    const emailSpace = document.getElementById('emailInput');
+    nameSpace.disabled = true;
+    emailSpace.disabled = true;
+
+    // Toggle de disabled status van de invoervelden
+    editBtn.addEventListener('click', () => {
+        if (nameSpace.disabled) {
+            nameSpace.disabled = false;
+            emailSpace.disabled = false;
+        } else {
+            nameSpace.disabled = true;
+            emailSpace.disabled = true;
+        }
+    }
+    );
+});

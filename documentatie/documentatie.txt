@@ -89,6 +89,9 @@ Ik ben begonnen met de change password pagina voor de userdatabase link die heb 
 ***26-05-2025 - email reset***
 ik heb alle website gelinkt met de database en heb eindelijk de password reset pagina vanaf de inlogpagina gefixt stelvoor je vergeet je wachtwoord dan kan hem zo wisselen, je kan hem ook veranderen je kan hem ook veranderen via dbuser.php man dat was echt een struggle
 
+***3-06-2025 - dbuser.php***
+ik ben sinds 26ste ongeveer bezig met de dbuser pagina de styling/frontend en een beetje van de backend nu is het vooral kijken of de photo toevoegen werkt
+
 **Overzicht van Ontwikkelde Pagina’s:**  
 ✅ **Login-systeem** – Inclusief login, registratie, wachtwoord vergeten en credentials versturen  
 ✅ **Landingspagina** – Met loginlink, kwaliteiten van de site, en een uitgebreide footer  
@@ -151,3 +154,6 @@ https://www.youtube.com/watch?v=hm79I2JpwJw
 
 foreign key
 https://www.youtube.com/watch?v=7HTAX0dfJqg
+
+underline animation
+https://www.youtube.com/watch?v=_SWVPKY9ddI

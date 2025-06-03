@@ -54,6 +54,7 @@ function logincompany(){
             $_POST['password'] === $row['companyPassword']) {
                 $_SESSION['companyName'] = $row['companyName'];
                 $_SESSION['companyPhoto'] = $row['companyPhoto'];
+                $_SESSION['companyEmail'] = $row['companyEmail'];
                 $_SESSION['companyId'] = $row['companyId'];
                 $_SESSION['paymentplanId'] = $row['paymentplanId']; 
                 if (isset($_POST['remember'])) {
@@ -109,8 +110,19 @@ function showTheLogin() {
         return $_SESSION['workerName'];
     }
 
-
     
+}
+
+function EmailofTheLogin() {
+
+    logincompany();
+    loginEmployee();
+
+    if (isset($_SESSION['companyEmail'])) {
+        return $_SESSION['companyEmail'];
+    } else if (isset($_SESSION['workerEmail'])) {
+        return $_SESSION['workerEmail'];
+    }
 }
 
 function registerCompany(){
@@ -334,6 +346,7 @@ function loginEmployee(){
             if (password_verify($_POST['password'], $row['workerPass']) || 
             $_POST['password'] === $row['workerPass']) {
                 $_SESSION['workerName'] = $row['workerName'];
+                $_SESSION['workerEmail'] = $row['workerEmail'];
                 $_SESSION['workerPhoto'] = $row['workerPhoto'];
                 $_SESSION['workerId'] = $row['workerId'];
                 header("Location: dashboard.php");
@@ -572,6 +585,55 @@ function getcompanyEmail($companyemail) {
     return false;
 }
 
+function editcompany(){
+    $conn = connectDB();
+
+    if(isset($_POST['companyName']) && isset($_POST['companyEmail']) && isset($_POST['companyPhoto'])){
+        $companyName = $_POST['companyName'];
+        $companyEmail = $_POST['companyEmail'];
+        $companyPhoto = $_POST['companyPhoto'];
+        $companyId = $_SESSION['companyId'];
+
+        if (empty($companyName) || empty($companyEmail)) {
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById('failureMsg').style.display = 'block';
+                    setTimeout(() => {
+                    document.getElementById('failureMsg').style.display = 'none';
+                    }, 3000);
+                });
+            </script>";
+        } else {
+            $stmt = $conn->prepare("UPDATE company SET companyName=?, companyEmail=?, companyPhoto=? WHERE companyId=?");
+            $stmt->bind_param("sssi", $companyName, $companyEmail, $companyPhoto, $companyId);
+
+            if ($stmt->execute()) {
+                $_SESSION['companyName'] = $companyName;
+                $_SESSION['companyEmail'] = $companyEmail;
+                $_SESSION['companyPhoto'] = $companyPhoto;
+                echo "<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.getElementById('successMsg').style.display = 'block';
+
+                        setTimeout(() => {
+                        document.getElementById('successMsg').style.display = 'none';
+                        }, 3000);
+                    });
+                </script>";
+            } else {
+                echo "<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.getElementById('failureMsg').style.display = 'block';
+                        setTimeout(() => {
+                        document.getElementById('failureMsg').style.display = 'none';
+                        }, 3000);
+                    });
+                </script>";
+            }
+        }
+    }
+
+}    
 function htmlFoot(){
 
     ?>

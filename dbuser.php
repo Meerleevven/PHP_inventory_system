@@ -12,15 +12,18 @@ if (!isset($_SESSION['companyName']) && !isset($_SESSION['workerName'])) {
     exit();
 }
 
+
+
+
 ?>
 <body>
     <div class="successMsg" id="successMsg">
     <i class='bx bx-check'></i>
-    <span class="theMsg">Registration successful!</span>
+    <span class="theMsg">Edit successful!</span>
 </div>
 <div class="failureMsg" id="failureMsg">
     <i class='bx bx-x'></i>
-    <span class="theMsg">Registration failed!</span>
+    <span class="theMsg">Edit failed!</span>
 </div>
     <div id="dbMainContainer">
         <?php include ('partials/dbsidebar.php') ?>
@@ -32,18 +35,18 @@ if (!isset($_SESSION['companyName']) && !isset($_SESSION['workerName'])) {
                         <div class="dbcontent-Min">
                             <div class="sectionHeader"><i class="fa-solid fa-gear"></i><h1>account management</h1></div>                
                                 <div id="settingsContainer">
-                                    <form action="dbuser" class="editUser" method="POST"></form>
+                                    <form action="imagetomap.php" class="editUser" method="POST" enctype="multipart/form-data">
                                        <div class="settingsRow">
                                             <div class="userforminputContainer">
-                                                <input type="file" name="companyImage" id="enterImage" accept="image/*">
+                                                <input type="file" name="thePhoto" id="enterImage" accept="image/*">
                                                 <img src="img/companyphotos/<?=htmlspecialchars($userphoto)?>" alt="user image" id="dbsidebar_userImage">
                                             </div>
                                             <div class="userforminputContainer">
-                                                <label>Account name:</label><input type="text" class="usersetInput" id="userInput" name="useremail" value="<?= htmlspecialchars($useraccname) ?>"/> 
+                                                <label>Account name:</label><input type="text" class="usersetInput" id="userInput" name="theName" value="<?= htmlspecialchars($useraccname) ?>"/> 
                                             </div>
                                             <div class="userforminputContainer">
                                                 <label>E mail:</label>
-                                                <input type="text" class="usersetInput" id="emailInput" name="useremail" value="<?= htmlspecialchars($userEmail) ?>"/> 
+                                                <input type="email" class="usersetInput" id="emailInput" name="theEmail" value="<?= htmlspecialchars($userEmail) ?>"/> 
                                             </div>
 
                                             <div class="userforminputContainer">
@@ -52,8 +55,9 @@ if (!isset($_SESSION['companyName']) && !isset($_SESSION['workerName'])) {
                                                 <label id="userforminputPassword"><a href="<?= $Url?>">***********</a></label>
                                             </div>
                                         </div>
-                                        <button type="submit" id="btnEdit">Edit</button>
-                                        
+                                        <input type="submit" class="submit" value="Save changes">    
+                                    </form>
+                                <button id="btnEdit">Open Edit</button>        
                             </div>
                         </div>
                     </div>

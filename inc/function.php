@@ -588,10 +588,10 @@ function getcompanyEmail($companyemail) {
 function editcompany(){
     $conn = connectDB();
 
-    if(isset($_POST['companyName']) && isset($_POST['companyEmail']) && isset($_POST['companyPhoto'])){
-        $companyName = $_POST['companyName'];
-        $companyEmail = $_POST['companyEmail'];
-        $companyPhoto = $_POST['companyPhoto'];
+    if(isset($_POST['theName']) && isset($_POST['theEmail']) && isset($_POST['thePhoto'])){
+        $companyName = $_POST['theName'];
+        $companyEmail = $_POST['theEmail'];
+        $companyPhoto = $_POST['thePhoto'];
         $companyId = $_SESSION['companyId'];
 
         if (empty($companyName) || empty($companyEmail)) {
@@ -620,6 +620,7 @@ function editcompany(){
                         }, 3000);
                     });
                 </script>";
+
             } else {
                 echo "<script>
                     document.addEventListener('DOMContentLoaded', function() {
